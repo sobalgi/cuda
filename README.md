@@ -54,6 +54,25 @@ Full details on visual domain adaptation including codes in [`visual`](visual) s
 
 ```> cd visual```
 
+### Visual Domain Adaptation
+The experiments in visual domain includes Digits, Objects and Traffic signs.
+- **Digits** : USPS, MNIST, SVHN, SYNNUMBERS with 10 digits for classification
+    - **USPS** : <a href="https://web.stanford.edu/~hastie/ElemStatLearn//datasets/zip.train.gz">Train</a>, <a href="https://web.stanford.edu/~hastie/ElemStatLearn//datasets/zip.test.gz">Test</a>
+    - **MNIST** : <a href="http://yann.lecun.com/exdb/mnist/">MNIST</a>
+    - **SVHN** : <a href="http://ufldl.stanford.edu/housenumbers/">SVHN</a>
+    - **SYNNUMBERS** : <a href="https://drive.google.com/file/d/0B9Z4d7lAwbnTSVR1dEFSRUFxOUU/view">SYNNUMBERS</a>
+- **Objects** : CIFAR, STL with 9 overlapping classes for classification
+    - **CIFAR** : <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR</a>
+    - **STL** : <a href="https://cs.stanford.edu/~acoates/stl10/">STL</a>
+- **Traffic Signs** : SYNSIGNS, GTSRB with 43 classes for classification
+    - **SYNSIGNS** : <a href="http://graphics.cs.msu.ru/en/node/1337">SYNSIGNS</a>
+    - **GTSRB** : <a href="http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset#Downloads">GTSRB</a>
+    
+#### Visual Domain Adaptation Dataset Statistics
+
+|![Image_datasets_details.png](git_images/misc/Image_datasets_details.png) |
+|:---:|
+| Image dataset statistics used for visual domain adaptation|
 
 # Language Domain Adaptation Experiments ([language_README.md](language/README.md))
 Full details on language domain adaptation including codes in [`language`](language) subdirectory.
