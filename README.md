@@ -54,7 +54,7 @@ Full details on visual domain adaptation including codes in [`visual`](visual) s
 
 ```> cd visual```
 
-### Visual Domain Adaptation
+## Visual Domain Adaptation
 The experiments in visual domain includes Digits, Objects and Traffic signs.
 - **Digits** : USPS, MNIST, SVHN, SYNNUMBERS with 10 digits for classification
     - **USPS** : <a href="https://web.stanford.edu/~hastie/ElemStatLearn//datasets/zip.train.gz">Train</a>, <a href="https://web.stanford.edu/~hastie/ElemStatLearn//datasets/zip.test.gz">Test</a>
@@ -68,17 +68,15 @@ The experiments in visual domain includes Digits, Objects and Traffic signs.
     - **SYNSIGNS** : <a href="http://graphics.cs.msu.ru/en/node/1337">SYNSIGNS</a>
     - **GTSRB** : <a href="http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset#Downloads">GTSRB</a>
     
-#### Visual Domain Adaptation Dataset Statistics
-
-|![Image_datasets_details.png](git_images/misc/Image_datasets_details.png) |
-|:---:|
-| Image dataset statistics used for visual domain adaptation|
-
 # Language Domain Adaptation Experiments ([language_README.md](language/README.md))
 Full details on language domain adaptation including codes in [`language`](language) subdirectory.
 **Coming soon!!!**
 
 ```> cd language```
+
+## Language Domain Adaptation
+We consider Amazon Customer Reviews Dataset with 4 domains Books, DVDs, Electronics and Kitchen Appliances located in [data](data) folder.
+Each domain has 2 classes positive and negative reviews as labels of binary classification.
 
 # Acknowledgements
 Special thanks to <a href="http://sml.csa.iisc.ac.in/index.html">Statistics and Machine Learning Group</a>, <a href="https://www.csa.iisc.ac.in/">Department of Computer Science and Automation</a>, <a href="https://www.iisc.ac.in/">Indian Institute of Science</a>, Bengaluru, India for proving the necessary computational resources for the experiments.
