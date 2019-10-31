@@ -1,5 +1,5 @@
 # CUDA-VDA : Contradistinguisher for Unsupervised Domain Adaptation - Visual Domain Adaptation
-Paper accepted in **ICDM 2019：19th IEEE International Conference on Data Mining**, Beijing, China, 8-11 November 2019.
+Paper accepted in **<a href="http://icdm2019.bigke.org/">ICDM 2019：19th IEEE International Conference on Data Mining</a>**, Beijing, China, 8-11 November 2019.
 
 The original code base for the experiments and results for visual datasets.
 
