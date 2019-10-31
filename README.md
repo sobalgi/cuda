@@ -182,7 +182,7 @@ Special thanks to <a href="http://sml.csa.iisc.ac.in/index.html">Statistics and 
 
 Sourabh Balgi
 
-M Tech, Artificial Intelligence
+M. Tech., Artificial Intelligence
 
 Indian Institute of Science, Bangalore
 
