@@ -5,7 +5,7 @@ The original code base for the experiments and results for Image datasets.
 
 Bibtex :
 
-``
+```
 @article{DBLP:journals/corr/abs-1909-03442,
   author    = {Sourabh Balgi and
                Ambedkar Dukkipati},
@@ -20,7 +20,7 @@ Bibtex :
   biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1909-03442},
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
-``
+```
 
 Paper URL :
 
@@ -73,7 +73,7 @@ The plots also illustrate the difference between the CUDA vs all the other domai
 
 ### Comparison of standard domain alignment approaches vs CUDA
 - Example toydataset 1 with seed 22 : 
-
+    
     | Method | D0 -> D1 | D1 -> D0 |
     | :---: | :---: | :---: |
     | Domain Alignment Approaches | ![cp_src_toy_d0_seed_0022_ss_contour_epoch](toydataset/git_images/plots/ss/cp_src_toy_d0_seed_0022_ss_contour_epoch.png) | ![cp_src_toy_d1_seed_0022_ss_contour_epoch](toydataset/git_images/plots/ss/cp_src_toy_d1_seed_0022_ss_contour_epoch.png) | 
@@ -97,7 +97,15 @@ Hence the decision boundaries are almost the same even when the source and targe
 | :---: | :---: |
 |![cp_src_toy_d0_seed_4045_ss_tu_ta_contour_epoch](toydataset/git_images/plots/ss_tu_ta/cp_src_toy_d0_seed_4045_ss_tu_ta_contour_epoch.png) | ![cp_src_toy_d1_seed_1819_ss_tu_ta_contour_epoch](toydataset/git_images/plots/ss_tu_ta/cp_src_toy_d1_seed_1819_ss_tu_ta_contour_epoch.png) | 
 |![cp_src_toy_d0_seed_3027_ss_tu_ta_contour_epoch](toydataset/git_images/plots/ss_tu_ta/cp_src_toy_d0_seed_3027_ss_tu_ta_contour_epoch.png) | ![cp_src_toy_d0_seed_3296_ss_tu_ta_contour_epoch](toydataset/git_images/plots/ss_tu_ta/cp_src_toy_d0_seed_3296_ss_tu_ta_contour_epoch.png) | 
-|![cp_src_toy_d0_seed_2108_ss_tu_ta_contour_epoch](toydataset/git_images/plots/ss_tu_ta/cp_src_toy_d0_seed_2108_ss_tu_ta_contour_epoch.png) | ![cp_src_toy_d0_seed_1653_ss_tu_ta_contour_epoch](toydataset/git_images/plots/ss_tu_ta/cp_src_toy_d0_seed_1653_ss_tu_ta_contour_epoch.png) | 
+|![src_toy_d0_seed_4019_ss_tu_ta_contour_epoch041](toydataset/git_images/plots/ss_tu_ta/src_toy_d0_seed_4019_ss_tu_ta_contour_epoch041.png) | ![src_toy_d0_seed_3980_ss_tu_ta_contour_epoch599](toydataset/git_images/plots/ss_tu_ta/src_toy_d0_seed_3980_ss_tu_ta_contour_epoch599.png) | 
+|![src_toy_d0_seed_3980_ss_tu_ta_contour_epoch599](toydataset/git_images/plots/ss_tu_ta/src_toy_d0_seed_3980_ss_tu_ta_contour_epoch599.png) | ![src_toy_d0_seed_0925_ss_tu_ta_contour_epoch042](toydataset/git_images/plots/ss_tu_ta/src_toy_d0_seed_0925_ss_tu_ta_contour_epoch042.png) | 
+|![src_toy_d0_seed_0661_ss_tu_ta_contour_epoch016](toydataset/git_images/plots/ss_tu_ta/src_toy_d0_seed_0661_ss_tu_ta_contour_epoch016.png) | ![src_toy_d0_seed_0158_ss_tu_ta_contour_epoch033](toydataset/git_images/plots/ss_tu_ta/src_toy_d0_seed_0158_ss_tu_ta_contour_epoch033.png) | 
+|![src_toy_d0_seed_2108_ss_tu_ta_contour_epoch006](toydataset/git_images/plots/ss_tu_ta/src_toy_d0_seed_2108_ss_tu_ta_contour_epoch006.png) | ![cp_src_toy_d0_seed_2108_ss_tu_ta_contour_epoch](toydataset/git_images/plots/ss_tu_ta/cp_src_toy_d0_seed_2108_ss_tu_ta_contour_epoch.png) | 
+|![src_toy_d1_seed_0152_ss_tu_ta_contour_epoch599](toydataset/git_images/plots/ss_tu_ta/src_toy_d1_seed_0152_ss_tu_ta_contour_epoch599.png) | ![src_toy_d0_seed_1887_ss_tu_ta_contour_epoch051](toydataset/git_images/plots/ss_tu_ta/src_toy_d0_seed_1887_ss_tu_ta_contour_epoch051.png) | 
+|![src_toy_d0_seed_0714_ss_tu_ta_contour_epoch560](toydataset/git_images/plots/ss_tu_ta/src_toy_d0_seed_0714_ss_tu_ta_contour_epoch560.png) | ![src_toy_d1_seed_0152_ss_tu_ta_contour_epoch012](toydataset/git_images/plots/ss_tu_ta/src_toy_d1_seed_0152_ss_tu_ta_contour_epoch012.png) | 
+|![src_toy_d0_seed_0152_ss_tu_ta_contour_epoch599](toydataset/git_images/plots/ss_tu_ta/src_toy_d0_seed_0152_ss_tu_ta_contour_epoch599.png) | ![src_toy_d0_seed_3182_ss_tu_ta_contour_epoch077](toydataset/git_images/plots/ss_tu_ta/src_toy_d0_seed_3182_ss_tu_ta_contour_epoch077.png) | 
+|![src_toy_d1_seed_1887_ss_tu_ta_contour_epoch021](toydataset/git_images/plots/ss_tu_ta/src_toy_d1_seed_1887_ss_tu_ta_contour_epoch021.png) | ![src_toy_d1_seed_3234_ss_tu_ta_contour_epoch048](toydataset/git_images/plots/ss_tu_ta/src_toy_d1_seed_3234_ss_tu_ta_contour_epoch048.png) | 
+|![cp_src_toy_d0_seed_1653_ss_tu_ta_contour_epoch](toydataset/git_images/plots/ss_tu_ta/cp_src_toy_d0_seed_1653_ss_tu_ta_contour_epoch.png) | ![src_toy_d1_seed_2108_ss_tu_ta_contour_epoch084](toydataset/git_images/plots/ss_tu_ta/src_toy_d1_seed_2108_ss_tu_ta_contour_epoch084.png) | 
 
 ## Illustration of the training process of contradistinguisher using CUDA
 [`toydataset/git_images/plots/videos`](toydataset/git_images/plots/videos) contains videos of the training of Contradistinguisher using CUDA as the epoch progresses.
@@ -106,22 +114,22 @@ We can observe the decision boundary being updated to satisfy both the domains a
 - `ss_tu` : source supervised + target unsupervised only setting with CUDA
 - `ss_tu_ta` : source supervised + target unsupervised + target adversarial setting with CUDA
 
-|![00_src_toy_d0_seed_0022_ss_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d0_seed_0022_ss_contour_acc_epoch599.mp4) | ![00_src_toy_d0_seed_0022_ss_tu_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d0_seed_0022_ss_tu_contour_acc_epoch599.mp4) | ![00_src_toy_d0_seed_0022_ss_tu_ta_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d0_seed_0022_ss_tu_ta_contour_acc_epoch599.mp4) | 
+|![00_src_toy_d0_seed_0022_ss_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_0022_ss_contour_acc_epoch599.gif) | ![00_src_toy_d0_seed_0022_ss_tu_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_0022_ss_tu_contour_acc_epoch599.gif) | ![00_src_toy_d0_seed_0022_ss_tu_ta_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_0022_ss_tu_ta_contour_acc_epoch599.gif) | 
 | :---: | :---: | :---: |
 | seed 22 : ss | seed 22 : ss_tu | seed 22 : ss_tu_ta |
-|![00_src_toy_d1_seed_0022_ss_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d1_seed_0022_ss_contour_acc_epoch599.mp4) | ![00_src_toy_d1_seed_0022_ss_tu_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d1_seed_0022_ss_tu_contour_acc_epoch599.mp4) | ![00_src_toy_d1_seed_0022_ss_tu_ta_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d1_seed_0022_ss_tu_ta_contour_acc_epoch599.mp4) | 
+|![00_src_toy_d1_seed_0022_ss_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d1_seed_0022_ss_contour_acc_epoch599.gif) | ![00_src_toy_d1_seed_0022_ss_tu_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d1_seed_0022_ss_tu_contour_acc_epoch599.gif) | ![00_src_toy_d1_seed_0022_ss_tu_ta_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d1_seed_0022_ss_tu_ta_contour_acc_epoch599.gif) | 
 | seed 22 : ss | seed 22 : ss_tu | seed 22 : ss_tu_ta |
-|![00_src_toy_d0_seed_3234_ss_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d0_seed_3234_ss_contour_acc_epoch599.mp4) | ![00_src_toy_d0_seed_3234_ss_tu_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d0_seed_3234_ss_tu_contour_acc_epoch599.mp4) | ![00_src_toy_d0_seed_3234_ss_tu_ta_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d0_seed_3234_ss_tu_ta_contour_acc_epoch599.mp4) | 
+|![00_src_toy_d0_seed_3234_ss_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_3234_ss_contour_acc_epoch599.gif) | ![00_src_toy_d0_seed_3234_ss_tu_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_3234_ss_tu_contour_acc_epoch599.gif) | ![00_src_toy_d0_seed_3234_ss_tu_ta_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_3234_ss_tu_ta_contour_acc_epoch599.gif) | 
 | seed 3234 : ss | seed 3234 : ss_tu | seed 3234 : ss_tu_ta |
-|![00_src_toy_d1_seed_3234_ss_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d1_seed_3234_ss_contour_acc_epoch599.mp4) | ![00_src_toy_d1_seed_3234_ss_tu_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d1_seed_3234_ss_tu_contour_acc_epoch599.mp4) | ![00_src_toy_d1_seed_3234_ss_tu_ta_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d1_seed_3234_ss_tu_ta_contour_acc_epoch599.mp4) | 
+|![00_src_toy_d1_seed_3234_ss_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d1_seed_3234_ss_contour_acc_epoch599.gif) | ![00_src_toy_d1_seed_3234_ss_tu_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d1_seed_3234_ss_tu_contour_acc_epoch599.gif) | ![00_src_toy_d1_seed_3234_ss_tu_ta_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d1_seed_3234_ss_tu_ta_contour_acc_epoch599.gif) | 
 | seed 3234 : ss | seed 3234 : ss_tu | seed 3234 : ss_tu_ta |
 
 More illustrations of CUDA with different domain shifts and orientations
 
-|![00_src_toy_d1_seed_3234_ss_tu_ta_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d1_seed_3234_ss_tu_ta_contour_acc_epoch599.mp4) | ![00_src_toy_d0_seed_1252_ss_tu_ta_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d0_seed_1252_ss_tu_ta_contour_acc_epoch599.mp4) | ![00_src_toy_d0_seed_1811_ss_tu_ta_contour_acc_epoch012](toydataset/git_images/plots/videos/00_src_toy_d0_seed_1811_ss_tu_ta_contour_acc_epoch012.mp4) | 
+|![00_src_toy_d1_seed_3234_ss_tu_ta_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d1_seed_3234_ss_tu_ta_contour_acc_epoch599.gif) | ![00_src_toy_d0_seed_1252_ss_tu_ta_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_1252_ss_tu_ta_contour_acc_epoch599.gif) | ![00_src_toy_d0_seed_1811_ss_tu_ta_contour_acc_epoch012](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_1811_ss_tu_ta_contour_acc_epoch012.gif) | 
 | :---: | :---: | :---: |
-|![00_src_toy_d0_seed_3296_ss_tu_ta_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d0_seed_3296_ss_tu_ta_contour_acc_epoch599.mp4) | ![00_src_toy_d0_seed_3027_ss_tu_ta_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d0_seed_3027_ss_tu_ta_contour_acc_epoch599.mp4) | ![00_src_toy_d0_seed_4045_ss_tu_ta_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d0_seed_4045_ss_tu_ta_contour_acc_epoch599.mp4) | 
-|![00_src_toy_d0_seed_2108_ss_tu_ta_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d0_seed_2108_ss_tu_ta_contour_acc_epoch599.mp4) | ![00_src_toy_d1_seed_1819_ss_tu_ta_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d1_seed_1819_ss_tu_ta_contour_acc_epoch599.mp4) | ![00_src_toy_d0_seed_1653_ss_tu_ta_contour_acc_epoch599.mp4](toydataset/git_images/plots/videos/00_src_toy_d0_seed_1653_ss_tu_ta_contour_acc_epoch599.mp4) | 
+|![00_src_toy_d0_seed_3296_ss_tu_ta_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_3296_ss_tu_ta_contour_acc_epoch599.gif) | ![00_src_toy_d0_seed_3027_ss_tu_ta_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_3027_ss_tu_ta_contour_acc_epoch599.gif) | ![00_src_toy_d0_seed_4045_ss_tu_ta_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_4045_ss_tu_ta_contour_acc_epoch599.gif) | 
+|![00_src_toy_d0_seed_2108_ss_tu_ta_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_2108_ss_tu_ta_contour_acc_epoch599.gif) | ![00_src_toy_d1_seed_1819_ss_tu_ta_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d1_seed_1819_ss_tu_ta_contour_acc_epoch599.gif) | ![00_src_toy_d0_seed_1653_ss_tu_ta_contour_acc_epoch599.gif](toydataset/git_images/plots/gifs/00_src_toy_d0_seed_1653_ss_tu_ta_contour_acc_epoch599.gif) | 
 
 # Visual Domain Adaptation Experiments ([visual_README.md](visual/README.md))
 Full details on visual domain adaptation including codes in [`visual`](visual) subdirectory.
