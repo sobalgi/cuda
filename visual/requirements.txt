@@ -4,4 +4,4 @@ scipy
 scikit-image
 scikit-learn>=0.18
 tensorboardX
-tensorflow==1.13.1
+tensorflow==1.15.0
