@@ -1,0 +1,196 @@
+
+
+Output log file /home/shubham/prj/devilda/./logs/19_05_18_21_22_06_lilavati_synsigns_gtsrb_0_large_ss_tu_su_ta.txt created
+File used to run the experiment : /home/shubham/prj/devilda/SB_main_00_supsrc_unsuptgt_unsupsrc_advtgt.py
+Output image files are stored in /home/shubham/prj/devilda/./images/19_05_18_21_22_06_lilavati_synsigns_gtsrb_0 directory
+Model files are stored in /home/shubham/prj/devilda/./checkpoint/19_05_18_21_22_06_lilavati_synsigns_gtsrb_0_large_ss_tu_su_ta directory
+
+Settings: absolute_base_path=/home/shubham/prj/devilda, absolute_pyfile_path=/home/shubham/prj/devilda/SB_main_00_supsrc_unsuptgt_unsupsrc_advtgt.py, args=Namespace(absolute_base_path='/home/shubham/prj/devilda', absolute_pyfile_path='/home/shubham/prj/devilda/SB_main_00_supsrc_unsuptgt_unsupsrc_advtgt.py', batch_size=128, buffer_size=10000, ckpt_dir='/home/shubham/prj/devilda/./checkpoint/19_05_18_21_22_06_lilavati_synsigns_gtsrb_0_large_ss_tu_su_ta', dataroot='/home/shubham/prj/devilda/./data', dataset='mnist', dataset_path='/home/shubham/prj/devilda/./data/mnist', epoch_size='large', exp='synsigns_gtsrb', gpus='2', image_size=28, img_dir='/home/shubham/prj/devilda/./images/19_05_18_21_22_06_lilavati_synsigns_gtsrb_0', learning_rate=0.001, load_checkpoint='', log_file='/home/shubham/prj/devilda/./logs/19_05_18_21_22_06_lilavati_synsigns_gtsrb_0_large_ss_tu_su_ta.txt', logs_dir='/home/shubham/prj/devilda/./logs', lr_decay_period=30, lr_decay_rate=0.6318, lr_decay_type='geometric', n_test_samples=1000, nc=1, network_type='se', num_epochs=300, nz=100, plot_interval=50, ramp=0, seed=1126, train_GnE=False, use_bn=True, use_drop=True, use_gen_sqrt=False, use_gumbel=False, use_sampler=True, use_tied_gen=False, weight_init='none', workers=12), base=1.0, batch_size=128, ckpt_dir=/home/shubham/prj/devilda/./checkpoint/19_05_18_21_22_06_lilavati_synsigns_gtsrb_0_large_ss_tu_su_ta, dataroot=/home/shubham/prj/devilda/./data, dataset_path=/home/shubham/prj/devilda/./data/mnist, epoch_size=large, exp=synsigns_gtsrb, experiment=synsigns_gtsrb, gpus=2, hostname=19_05_18_21_22_06, image_size=28, img_dir=/home/shubham/prj/devilda/./images/19_05_18_21_22_06_lilavati_synsigns_gtsrb_0, lambda_AE_X=8.0, lambda_AE_Y=8.0, lambda_MMD=1.0, lambda_rg=16.0, lambda_sal=0.0, lambda_ssl=1.0, lambda_sul=1.0, lambda_tal=1.0, lambda_tul=1.0, learning_rate=0.001, log_file=/home/shubham/prj/devilda/./logs/19_05_18_21_22_06_lilavati_synsigns_gtsrb_0_large_ss_tu_su_ta.txt, log_num=0, logs_dir=/home/shubham/prj/devilda/./logs, machinename=lilavati, nc=1, num_epochs=300, nz=100, plot_interval=50, ramp_sup_weight_in_list=[1.0], ramp_unsup_weight_in_list=[1.0], seed=1126, sigma_list=[1, 2, 4, 8, 16], simul_train_src_tgt=True, timestamp=19_05_18_21_22_06, train_GnE=False, use_gen_sqrt=False, use_gpu=True, use_ramp_sup=False, use_ramp_unsup=False, use_sampler=True, workers=12
+num_gpu: 1, GPU-ID: 2
+current cuda device = 0
+using cuda device = 0
+
+SRC : SYNSIGNS: train: count=100000, X.shape=torch.Size([3, 40, 40]) test: count=100000, X.shape=torch.Size([3, 40, 40])
+TGT : GTSRB: train: count=39209, X.shape=torch.Size([3, 40, 40]) test: count=12630, X.shape=torch.Size([3, 40, 40])
+
+Transformations for SRC and TGT datasets ...
+SRC : SYNSIGNS - transformation : Compose(
+    Resize(size=40, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(40, 40))
+    ToTensor()
+    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
+)
+TGT : GTSRB - transformation : Compose(
+    Resize(size=40, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(40, 40))
+    ToTensor()
+    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
+)
+
+Number of classes : 43
+
+Loaded  Source and Target data respectively
+
+Using epoch_size : large
+prior_src_train : tensor([0.0237, 0.0233, 0.0231, 0.0224, 0.0229, 0.0232, 0.0233, 0.0236, 0.0241,
+        0.0233, 0.0235, 0.0233, 0.0232, 0.0238, 0.0239, 0.0229, 0.0241, 0.0231,
+        0.0230, 0.0239, 0.0224, 0.0233, 0.0229, 0.0231, 0.0224, 0.0228, 0.0236,
+        0.0229, 0.0232, 0.0238, 0.0231, 0.0232, 0.0235, 0.0232, 0.0227, 0.0227,
+        0.0235, 0.0236, 0.0229, 0.0235, 0.0236, 0.0229, 0.0239],
+       device='cuda:0')
+prior_tgt_train : tensor([0.0234, 0.0235, 0.0231, 0.0234, 0.0229, 0.0229, 0.0232, 0.0234, 0.0233,
+        0.0231, 0.0238, 0.0233, 0.0230, 0.0229, 0.0230, 0.0231, 0.0232, 0.0236,
+        0.0225, 0.0240, 0.0221, 0.0233, 0.0230, 0.0230, 0.0231, 0.0233, 0.0235,
+        0.0234, 0.0231, 0.0231, 0.0232, 0.0232, 0.0242, 0.0233, 0.0244, 0.0229,
+        0.0237, 0.0230, 0.0236, 0.0239, 0.0227, 0.0230, 0.0230],
+       device='cuda:0')
+
+Building Network from SE ...
+Encoder : DataParallel(
+  (module): Encoder(
+    (conv1_1): Conv2d(3, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv1_1_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1_2): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv1_2_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1_3): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv1_3_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (pool1): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (conv2_1): Conv2d(96, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv2_1_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv2_2): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv2_2_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv2_3): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv2_3_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (pool2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (conv3_1): Conv2d(192, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv3_1_bn): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv3_2): Conv2d(384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv3_2_bn): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv3_3): Conv2d(384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv3_3_bn): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (pool3): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (drop1): Dropout(p=0.5)
+  )
+)
+Classifier : DataParallel(
+  (module): Classifier(
+    (fc4): Linear(in_features=384, out_features=43, bias=True)
+  )
+)
+Generator : DataParallel(
+  (module): Generator(
+    (network): Sequential(
+      (0): ConvTranspose2d(100, 512, kernel_size=(5, 5), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU(inplace)
+      (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (5): ReLU(inplace)
+      (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (8): ReLU(inplace)
+      (9): ConvTranspose2d(128, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (10): Tanh()
+    )
+  )
+)
+Network Built ...
+
+optimizerE : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+optimizerC : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+optimizerGS : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+optimizerGT : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+
+Training...
+Note : Simultaneous training of source and target domains. No swapping after e epochs ...
+Checkpoint directory to store files for current run : /home/shubham/prj/devilda/./checkpoint/19_05_18_21_22_06_lilavati_synsigns_gtsrb_0_large_ss_tu_su_ta
+**++ E:000/300 #B:781, t=016.07m, L=06.3478, ACC : S_TRN= 98.70%, T_TRN= 96.84%, S_TST= 98.65%, T_TST= 94.40%
+**++ E:001/300 #B:781, t=045.91m, L=05.1494, ACC : S_TRN= 99.64%, T_TRN= 98.64%, S_TST= 99.62%, T_TST= 97.74%
+     E:002/300 #B:781, t=075.71m, L=05.1288, ACC : S_TRN= 99.58%, T_TRN= 98.68%, S_TST= 99.58%, T_TST= 96.69%
+**++ E:003/300 #B:781, t=103.43m, L=05.0991, ACC : S_TRN= 99.74%, T_TRN= 98.87%, S_TST= 99.74%, T_TST= 97.96%
+  ++ E:004/300 #B:781, t=137.15m, L=05.0804, ACC : S_TRN= 99.70%, T_TRN= 98.90%, S_TST= 99.64%, T_TST= 98.00%
+     E:005/300 #B:781, t=170.39m, L=05.1223, ACC : S_TRN= 99.66%, T_TRN= 99.09%, S_TST= 99.64%, T_TST= 97.92%
+**++ E:006/300 #B:781, t=200.61m, L=05.0869, ACC : S_TRN= 99.88%, T_TRN= 99.17%, S_TST= 99.88%, T_TST= 98.30%
+  ++ E:007/300 #B:781, t=234.34m, L=05.0646, ACC : S_TRN= 99.87%, T_TRN= 98.87%, S_TST= 99.87%, T_TST= 98.50%
+     E:008/300 #B:781, t=268.71m, L=05.0731, ACC : S_TRN= 99.77%, T_TRN= 98.77%, S_TST= 99.77%, T_TST= 98.19%
+     E:009/300 #B:781, t=299.89m, L=05.0963, ACC : S_TRN= 99.77%, T_TRN= 99.13%, S_TST= 99.77%, T_TST= 98.30%
+  ++ E:010/300 #B:781, t=330.48m, L=05.1157, ACC : S_TRN= 99.72%, T_TRN= 98.66%, S_TST= 99.72%, T_TST= 98.65%
+**   E:011/300 #B:781, t=362.63m, L=05.0917, ACC : S_TRN= 99.89%, T_TRN= 98.83%, S_TST= 99.88%, T_TST= 98.63%
+**++ E:012/300 #B:781, t=396.04m, L=05.0844, ACC : S_TRN= 99.91%, T_TRN= 99.10%, S_TST= 99.90%, T_TST= 98.65%
+     E:013/300 #B:781, t=433.33m, L=05.1290, ACC : S_TRN= 99.61%, T_TRN= 99.22%, S_TST= 99.62%, T_TST= 97.85%
+**   E:014/300 #B:781, t=466.68m, L=05.0771, ACC : S_TRN= 99.92%, T_TRN= 99.27%, S_TST= 99.91%, T_TST= 98.37%
+  ++ E:015/300 #B:781, t=496.32m, L=05.1016, ACC : S_TRN= 99.75%, T_TRN= 99.06%, S_TST= 99.73%, T_TST= 98.77%
+  ++ E:016/300 #B:781, t=525.11m, L=05.0704, ACC : S_TRN= 99.90%, T_TRN= 99.41%, S_TST= 99.89%, T_TST= 98.95%
+     E:017/300 #B:781, t=550.90m, L=05.0441, ACC : S_TRN= 99.83%, T_TRN= 99.32%, S_TST= 99.85%, T_TST= 98.78%
+     E:018/300 #B:781, t=573.13m, L=05.0571, ACC : S_TRN= 99.88%, T_TRN= 99.27%, S_TST= 99.88%, T_TST= 98.78%
+  ++ E:019/300 #B:781, t=595.93m, L=05.0755, ACC : S_TRN= 99.89%, T_TRN= 99.10%, S_TST= 99.89%, T_TST= 99.31%
+**   E:020/300 #B:781, t=621.16m, L=05.0588, ACC : S_TRN= 99.93%, T_TRN= 99.35%, S_TST= 99.93%, T_TST= 99.12%
+     E:021/300 #B:781, t=644.37m, L=05.0562, ACC : S_TRN= 99.93%, T_TRN= 99.09%, S_TST= 99.93%, T_TST= 98.57%
+**++ E:022/300 #B:781, t=667.71m, L=05.0386, ACC : S_TRN= 99.95%, T_TRN= 99.07%, S_TST= 99.94%, T_TST= 99.40%
+     E:023/300 #B:781, t=692.85m, L=05.3621, ACC : S_TRN= 99.82%, T_TRN= 99.36%, S_TST= 99.83%, T_TST= 98.70%
+     E:024/300 #B:781, t=716.26m, L=05.1157, ACC : S_TRN= 99.92%, T_TRN= 99.22%, S_TST= 99.93%, T_TST= 98.88%
+     E:025/300 #B:781, t=739.26m, L=05.0778, ACC : S_TRN= 99.84%, T_TRN= 99.38%, S_TST= 99.84%, T_TST= 98.90%
+     E:026/300 #B:781, t=762.29m, L=05.2731, ACC : S_TRN= 99.43%, T_TRN= 98.98%, S_TST= 99.46%, T_TST= 97.84%
+     E:027/300 #B:781, t=785.72m, L=05.0590, ACC : S_TRN= 98.98%, T_TRN= 99.18%, S_TST= 98.95%, T_TST= 98.43%
+     E:028/300 #B:781, t=808.31m, L=05.0716, ACC : S_TRN= 99.72%, T_TRN= 99.07%, S_TST= 99.72%, T_TST= 97.42%
+     E:029/300 #B:781, t=831.71m, L=05.0383, ACC : S_TRN= 99.38%, T_TRN= 99.20%, S_TST= 99.36%, T_TST= 98.68%
+     E:030/300 #B:781, t=854.48m, L=05.0383, ACC : S_TRN= 99.80%, T_TRN= 99.34%, S_TST= 99.83%, T_TST= 98.95%
+     E:031/300 #B:781, t=878.12m, L=05.0354, ACC : S_TRN= 99.93%, T_TRN= 99.42%, S_TST= 99.94%, T_TST= 99.04%
+     E:032/300 #B:781, t=901.31m, L=05.0361, ACC : S_TRN= 99.94%, T_TRN= 99.42%, S_TST= 99.94%, T_TST= 98.67%
+     E:033/300 #B:781, t=924.47m, L=05.0361, ACC : S_TRN= 99.86%, T_TRN= 98.57%, S_TST= 99.85%, T_TST= 96.78%
+     E:034/300 #B:781, t=948.29m, L=05.0355, ACC : S_TRN= 99.93%, T_TRN= 99.02%, S_TST= 99.93%, T_TST= 98.89%
+     E:035/300 #B:781, t=975.57m, L=05.0338, ACC : S_TRN= 99.93%, T_TRN= 98.71%, S_TST= 99.93%, T_TST= 98.02%
+**   E:036/300 #B:781, t=1002.65m, L=05.0356, ACC : S_TRN= 99.94%, T_TRN= 99.37%, S_TST= 99.94%, T_TST= 98.65%
+     E:037/300 #B:781, t=1035.18m, L=05.0354, ACC : S_TRN= 99.92%, T_TRN= 98.91%, S_TST= 99.93%, T_TST= 98.62%
+     E:038/300 #B:781, t=1063.13m, L=05.0335, ACC : S_TRN= 99.92%, T_TRN= 98.70%, S_TST= 99.92%, T_TST= 97.48%
+     E:039/300 #B:781, t=1091.20m, L=05.0489, ACC : S_TRN= 99.92%, T_TRN= 99.19%, S_TST= 99.90%, T_TST= 97.45%
+**   E:040/300 #B:781, t=1114.33m, L=05.0330, ACC : S_TRN= 99.99%, T_TRN= 99.24%, S_TST= 99.98%, T_TST= 98.65%
+     E:041/300 #B:781, t=1137.66m, L=05.0327, ACC : S_TRN= 99.98%, T_TRN= 99.35%, S_TST= 99.98%, T_TST= 98.95%
+     E:042/300 #B:781, t=1160.09m, L=05.0358, ACC : S_TRN= 99.97%, T_TRN= 98.82%, S_TST= 99.96%, T_TST= 98.86%
+     E:043/300 #B:781, t=1183.06m, L=05.0354, ACC : S_TRN= 99.77%, T_TRN= 98.59%, S_TST= 99.78%, T_TST= 97.93%
+     E:044/300 #B:781, t=1208.67m, L=05.0345, ACC : S_TRN= 99.95%, T_TRN= 99.30%, S_TST= 99.95%, T_TST= 98.61%
+     E:045/300 #B:781, t=1236.73m, L=05.0345, ACC : S_TRN= 99.90%, T_TRN= 98.94%, S_TST= 99.90%, T_TST= 98.58%
+**   E:046/300 #B:781, t=1265.20m, L=05.0342, ACC : S_TRN= 99.99%, T_TRN= 98.97%, S_TST= 99.99%, T_TST= 98.72%
+     E:047/300 #B:781, t=1290.54m, L=05.0343, ACC : S_TRN= 99.92%, T_TRN= 98.93%, S_TST= 99.91%, T_TST= 97.93%
+     E:048/300 #B:781, t=1314.40m, L=05.0337, ACC : S_TRN= 99.93%, T_TRN= 99.15%, S_TST= 99.94%, T_TST= 97.46%
+     E:049/300 #B:781, t=1338.64m, L=05.0418, ACC : S_TRN= 99.99%, T_TRN= 99.30%, S_TST= 99.98%, T_TST= 99.05%
+**   E:050/300 #B:781, t=1364.26m, L=05.0327, ACC : S_TRN= 99.99%, T_TRN= 99.26%, S_TST= 99.99%, T_TST= 99.26%
+     E:051/300 #B:781, t=1386.70m, L=05.0344, ACC : S_TRN= 99.94%, T_TRN= 99.36%, S_TST= 99.94%, T_TST= 99.25%
+     E:052/300 #B:781, t=1409.13m, L=05.0683, ACC : S_TRN= 99.91%, T_TRN= 98.98%, S_TST= 99.91%, T_TST= 98.36%
+     E:053/300 #B:781, t=1431.45m, L=05.0327, ACC : S_TRN= 99.99%, T_TRN= 99.06%, S_TST= 99.99%, T_TST= 98.91%
+     E:054/300 #B:781, t=1454.35m, L=05.0319, ACC : S_TRN= 99.88%, T_TRN= 99.35%, S_TST= 99.89%, T_TST= 98.67%
+     E:055/300 #B:781, t=1476.63m, L=05.0343, ACC : S_TRN= 99.97%, T_TRN= 99.35%, S_TST= 99.97%, T_TST= 98.80%
+**   E:056/300 #B:781, t=1499.40m, L=05.0338, ACC : S_TRN= 100.00%, T_TRN= 99.33%, S_TST= 99.99%, T_TST= 98.90%
+     E:057/300 #B:781, t=1521.74m, L=05.0345, ACC : S_TRN= 99.88%, T_TRN= 98.85%, S_TST= 99.89%, T_TST= 97.34%
+     E:058/300 #B:781, t=1544.35m, L=05.0343, ACC : S_TRN= 99.88%, T_TRN= 98.72%, S_TST= 99.86%, T_TST= 97.74%
+     E:059/300 #B:781, t=1567.88m, L=05.0336, ACC : S_TRN= 99.73%, T_TRN= 99.14%, S_TST= 99.73%, T_TST= 97.80%
+     E:060/300 #B:781, t=1591.10m, L=05.0333, ACC : S_TRN= 99.95%, T_TRN= 98.96%, S_TST= 99.96%, T_TST= 98.05%
+**   E:061/300 #B:781, t=1617.36m, L=05.0304, ACC : S_TRN= 100.00%, T_TRN= 99.12%, S_TST= 100.00%, T_TST= 98.38%

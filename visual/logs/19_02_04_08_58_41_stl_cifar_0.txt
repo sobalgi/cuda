@@ -1,0 +1,259 @@
+
+
+Output log file /home/sourabh/prj/new_dade/./logs/19_02_04_08_58_41_stl_cifar_0.txt created
+File used to run the experiment : /home/sourabh/prj/new_dade/SB_main_00.py
+Output image files are stored in /home/sourabh/prj/new_dade/./images/19_02_04_08_58_41_stl_cifar_0 directory
+Model files are stored in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0 directory
+
+Settings: absolute_base_path=/home/sourabh/prj/new_dade, absolute_pyfile_path=/home/sourabh/prj/new_dade/SB_main_00.py, args=Namespace(absolute_base_path='/home/sourabh/prj/new_dade', absolute_pyfile_path='/home/sourabh/prj/new_dade/SB_main_00.py', batch_size=128, buffer_size=10000, ckpt_dir='/home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0', dataroot='./../sesml/data', dataset='mnist', epoch_size='large', exp='stl_cifar', experiment=None, gpus='3,2,1,0', image_size=32, img_dir='/home/sourabh/prj/new_dade/./images/19_02_04_08_58_41_stl_cifar_0', learning_rate=0.001, load_checkpoint='', log_file='/home/sourabh/prj/new_dade/./logs/19_02_04_08_58_41_stl_cifar_0.txt', logs_dir='/home/sourabh/prj/new_dade/./logs', nc=3, num_epochs=300, nz=100, plot_interval=20, seed=0, use_tied_gen=False, workers=12), base=1.0, batch_size=128, ckpt_dir=/home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0, dataroot=/home/sourabh/prj/new_dade/./../sesml/data, dataset_path=/home/sourabh/prj/new_dade/./../sesml/data/mnist, epoch_size=large, exp=stl_cifar, experiment=stl_cifar, gpus=3,2,1,0, hostname=19_02_04_08_58_41, image_size=32, img_dir=/home/sourabh/prj/new_dade/./images/19_02_04_08_58_41_stl_cifar_0, lambda_AE_X=8.0, lambda_AE_Y=8.0, lambda_MMD=1.0, lambda_rg=16.0, lambda_sal=1.0, lambda_ssl=1.0, lambda_sul=1.0, lambda_tal=1.0, lambda_tul=1.0, learning_rate=0.001, log_file=/home/sourabh/prj/new_dade/./logs/19_02_04_08_58_41_stl_cifar_0.txt, log_num=0, logs_dir=/home/sourabh/prj/new_dade/./logs, nc=3, num_epochs=300, nz=100, plot_interval=20, seed=0, sigma_list=[1, 2, 4, 8, 16], timestamp=19_02_04_08_58_41, use_gpu=True, workers=12
+num_gpu: 
+current cuda device = 0
+using cuda device = 0
+SRC : STL9: train: count=4500, X.shape=torch.Size([3, 32, 32]) test: count=7200, X.shape=torch.Size([3, 32, 32])
+TGT : CIFAR9: train: count=45000, X.shape=torch.Size([3, 32, 32]) test: count=9000, X.shape=torch.Size([3, 32, 32])
+Loaded  Source and Target data respectively
+Building Network ...
+Encoder : DataParallel(
+  (module): Encoder(
+    (conv1_1): Conv2d(3, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv1_1_bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1_2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv1_2_bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1_3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv1_3_bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (pool1): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (drop1): Dropout(p=0.5)
+    (conv2_1): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv2_1_bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv2_2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv2_2_bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv2_3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv2_3_bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (pool2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (drop2): Dropout(p=0.5)
+    (conv3_1): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1))
+    (conv3_1_bn): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (nin3_2): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), padding=(1, 1))
+    (nin3_2_bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (nin3_3): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), padding=(1, 1))
+    (nin3_3_bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+)
+Classifier : DataParallel(
+  (module): Classifier(
+    (fc4): Linear(in_features=128, out_features=9, bias=True)
+  )
+)
+Generator : DataParallel(
+  (module): Generator(
+    (network): Sequential(
+      (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU(inplace)
+      (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (5): ReLU(inplace)
+      (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (8): ReLU(inplace)
+      (9): ConvTranspose2d(128, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (10): Tanh()
+    )
+  )
+)
+Network Built ...
+optimizerE : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+optimizerC : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+optimizerGS : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+optimizerGT : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+Training...
+Note : Simultaneous training of source and target domains. No swapping after e epochs ...
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+*** Epoch:  0/300   86/  87 took 1.33m - Loss:16.40927 SRC TEST ACC = 37.472%, TGT TEST ACC = 28.733%
+*** Epoch:  1/300   86/  87 took 2.63m - Loss:15.23489 SRC TEST ACC = 53.625%, TGT TEST ACC = 38.833%
+*** Epoch:  2/300   86/  87 took 3.91m - Loss:14.57417 SRC TEST ACC = 53.986%, TGT TEST ACC = 42.067%
+    Epoch:  3/300   86/  87 took 5.20m - Loss:13.99443 SRC TEST ACC = 41.986%, TGT TEST ACC = 28.556%
+*** Epoch:  4/300   86/  87 took 6.50m - Loss:13.62004 SRC TEST ACC = 64.111%, TGT TEST ACC = 52.600%
+    Epoch:  5/300   86/  87 took 7.79m - Loss:14.19052 SRC TEST ACC = 58.194%, TGT TEST ACC = 47.300%
+    Epoch:  6/300   86/  87 took 9.08m - Loss:13.32106 SRC TEST ACC = 62.194%, TGT TEST ACC = 48.944%
+    Epoch:  7/300   86/  87 took 10.38m - Loss:13.57492 SRC TEST ACC = 54.889%, TGT TEST ACC = 43.544%
+*** Epoch:  8/300   86/  87 took 11.67m - Loss:13.17810 SRC TEST ACC = 65.681%, TGT TEST ACC = 58.422%
+*** Epoch:  9/300   86/  87 took 12.97m - Loss:12.99347 SRC TEST ACC = 67.069%, TGT TEST ACC = 56.056%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+*** Epoch: 10/300   86/  87 took 14.27m - Loss:12.91293 SRC TEST ACC = 67.569%, TGT TEST ACC = 59.189%
+    Epoch: 11/300   86/  87 took 15.59m - Loss:12.89491 SRC TEST ACC = 67.167%, TGT TEST ACC = 57.467%
+    Epoch: 12/300   86/  87 took 16.89m - Loss:12.87346 SRC TEST ACC = 64.875%, TGT TEST ACC = 56.189%
+    Epoch: 13/300   86/  87 took 18.19m - Loss:12.86761 SRC TEST ACC = 66.778%, TGT TEST ACC = 57.278%
+    Epoch: 14/300   86/  87 took 19.48m - Loss:12.85418 SRC TEST ACC = 67.208%, TGT TEST ACC = 59.100%
+    Epoch: 15/300   86/  87 took 20.79m - Loss:12.82876 SRC TEST ACC = 65.278%, TGT TEST ACC = 54.811%
+    Epoch: 16/300   86/  87 took 22.09m - Loss:12.82477 SRC TEST ACC = 66.639%, TGT TEST ACC = 58.678%
+*** Epoch: 17/300   86/  87 took 23.39m - Loss:12.83051 SRC TEST ACC = 69.347%, TGT TEST ACC = 59.833%
+    Epoch: 18/300   86/  87 took 24.69m - Loss:12.82138 SRC TEST ACC = 66.792%, TGT TEST ACC = 57.911%
+    Epoch: 19/300   86/  87 took 25.97m - Loss:12.81199 SRC TEST ACC = 67.431%, TGT TEST ACC = 59.667%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+    Epoch: 20/300   86/  87 took 27.28m - Loss:12.79878 SRC TEST ACC = 68.167%, TGT TEST ACC = 59.244%
+    Epoch: 21/300   86/  87 took 28.60m - Loss:12.79661 SRC TEST ACC = 64.208%, TGT TEST ACC = 57.656%
+*** Epoch: 22/300   86/  87 took 29.90m - Loss:12.79142 SRC TEST ACC = 69.486%, TGT TEST ACC = 58.922%
+*** Epoch: 23/300   86/  87 took 31.21m - Loss:12.78749 SRC TEST ACC = 69.708%, TGT TEST ACC = 59.900%
+*** Epoch: 24/300   86/  87 took 32.51m - Loss:12.78596 SRC TEST ACC = 70.431%, TGT TEST ACC = 60.633%
+    Epoch: 25/300   86/  87 took 33.81m - Loss:12.78313 SRC TEST ACC = 69.694%, TGT TEST ACC = 60.800%
+    Epoch: 26/300   86/  87 took 35.12m - Loss:12.77565 SRC TEST ACC = 68.833%, TGT TEST ACC = 60.700%
+    Epoch: 27/300   86/  87 took 36.42m - Loss:12.78294 SRC TEST ACC = 69.875%, TGT TEST ACC = 62.167%
+    Epoch: 28/300   86/  87 took 37.73m - Loss:12.77579 SRC TEST ACC = 68.847%, TGT TEST ACC = 60.056%
+    Epoch: 29/300   86/  87 took 39.04m - Loss:12.77178 SRC TEST ACC = 69.639%, TGT TEST ACC = 60.744%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+    Epoch: 30/300   86/  87 took 40.34m - Loss:12.76219 SRC TEST ACC = 68.042%, TGT TEST ACC = 60.189%
+    Epoch: 31/300   86/  87 took 41.66m - Loss:12.76303 SRC TEST ACC = 69.278%, TGT TEST ACC = 60.667%
+    Epoch: 32/300   86/  87 took 42.95m - Loss:12.76186 SRC TEST ACC = 69.667%, TGT TEST ACC = 60.556%
+    Epoch: 33/300   86/  87 took 44.26m - Loss:12.79401 SRC TEST ACC = 60.569%, TGT TEST ACC = 47.889%
+    Epoch: 34/300   86/  87 took 45.57m - Loss:12.75471 SRC TEST ACC = 63.861%, TGT TEST ACC = 54.367%
+    Epoch: 35/300   86/  87 took 46.87m - Loss:12.75477 SRC TEST ACC = 67.083%, TGT TEST ACC = 57.211%
+    Epoch: 36/300   86/  87 took 48.17m - Loss:12.75171 SRC TEST ACC = 69.514%, TGT TEST ACC = 60.767%
+    Epoch: 37/300   86/  87 took 49.48m - Loss:12.75078 SRC TEST ACC = 68.361%, TGT TEST ACC = 60.333%
+    Epoch: 38/300   86/  87 took 50.78m - Loss:12.75112 SRC TEST ACC = 69.819%, TGT TEST ACC = 61.567%
+    Epoch: 39/300   86/  87 took 52.10m - Loss:12.75335 SRC TEST ACC = 67.667%, TGT TEST ACC = 59.511%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+*** Epoch: 40/300   86/  87 took 53.40m - Loss:12.74124 SRC TEST ACC = 70.514%, TGT TEST ACC = 61.333%
+    Epoch: 41/300   86/  87 took 54.72m - Loss:12.74045 SRC TEST ACC = 69.639%, TGT TEST ACC = 61.567%
+    Epoch: 42/300   86/  87 took 56.02m - Loss:12.73876 SRC TEST ACC = 69.542%, TGT TEST ACC = 59.656%
+    Epoch: 43/300   86/  87 took 57.32m - Loss:12.73553 SRC TEST ACC = 67.889%, TGT TEST ACC = 58.200%
+*** Epoch: 44/300   86/  87 took 58.62m - Loss:12.73530 SRC TEST ACC = 70.625%, TGT TEST ACC = 59.267%
+    Epoch: 45/300   86/  87 took 59.92m - Loss:13.77103 SRC TEST ACC = 51.681%, TGT TEST ACC = 40.500%
+    Epoch: 46/300   86/  87 took 61.23m - Loss:13.11784 SRC TEST ACC = 70.361%, TGT TEST ACC = 59.400%
+    Epoch: 47/300   86/  87 took 62.53m - Loss:12.79372 SRC TEST ACC = 69.750%, TGT TEST ACC = 60.744%
+    Epoch: 48/300   86/  87 took 63.84m - Loss:12.77240 SRC TEST ACC = 69.889%, TGT TEST ACC = 58.811%
+*** Epoch: 49/300   86/  87 took 65.14m - Loss:12.75831 SRC TEST ACC = 71.319%, TGT TEST ACC = 62.722%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+    Epoch: 50/300   86/  87 took 66.46m - Loss:12.75124 SRC TEST ACC = 70.264%, TGT TEST ACC = 60.489%
+    Epoch: 51/300   86/  87 took 67.78m - Loss:12.74911 SRC TEST ACC = 70.611%, TGT TEST ACC = 60.733%
+    Epoch: 52/300   86/  87 took 69.09m - Loss:12.73966 SRC TEST ACC = 69.597%, TGT TEST ACC = 62.400%
+    Epoch: 53/300   86/  87 took 70.39m - Loss:12.73855 SRC TEST ACC = 70.806%, TGT TEST ACC = 61.778%
+    Epoch: 54/300   86/  87 took 71.71m - Loss:12.73908 SRC TEST ACC = 70.611%, TGT TEST ACC = 62.644%
+    Epoch: 55/300   86/  87 took 73.02m - Loss:12.73296 SRC TEST ACC = 70.583%, TGT TEST ACC = 64.411%
+    Epoch: 56/300   86/  87 took 74.33m - Loss:12.73140 SRC TEST ACC = 70.153%, TGT TEST ACC = 64.711%
+    Epoch: 57/300   86/  87 took 75.64m - Loss:12.72826 SRC TEST ACC = 70.458%, TGT TEST ACC = 63.789%
+    Epoch: 58/300   86/  87 took 76.95m - Loss:12.73433 SRC TEST ACC = 69.514%, TGT TEST ACC = 62.833%
+    Epoch: 59/300   86/  87 took 78.25m - Loss:12.73578 SRC TEST ACC = 71.236%, TGT TEST ACC = 63.967%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+    Epoch: 60/300   86/  87 took 79.57m - Loss:12.72667 SRC TEST ACC = 70.028%, TGT TEST ACC = 62.867%
+    Epoch: 61/300   86/  87 took 80.90m - Loss:12.72581 SRC TEST ACC = 70.653%, TGT TEST ACC = 62.544%
+    Epoch: 62/300   86/  87 took 82.21m - Loss:12.72570 SRC TEST ACC = 70.556%, TGT TEST ACC = 62.744%
+*** Epoch: 63/300   86/  87 took 83.50m - Loss:12.72213 SRC TEST ACC = 71.694%, TGT TEST ACC = 63.211%
+    Epoch: 64/300   86/  87 took 84.82m - Loss:12.72150 SRC TEST ACC = 69.986%, TGT TEST ACC = 62.322%
+    Epoch: 65/300   86/  87 took 86.11m - Loss:12.72299 SRC TEST ACC = 70.222%, TGT TEST ACC = 62.700%
+    Epoch: 66/300   86/  87 took 87.41m - Loss:12.71865 SRC TEST ACC = 70.875%, TGT TEST ACC = 63.500%
+    Epoch: 67/300   86/  87 took 88.72m - Loss:12.72388 SRC TEST ACC = 70.778%, TGT TEST ACC = 64.367%
+    Epoch: 68/300   86/  87 took 90.03m - Loss:12.71804 SRC TEST ACC = 69.375%, TGT TEST ACC = 63.400%
+    Epoch: 69/300   86/  87 took 91.34m - Loss:12.71684 SRC TEST ACC = 70.903%, TGT TEST ACC = 64.489%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+    Epoch: 70/300   86/  87 took 92.66m - Loss:12.71553 SRC TEST ACC = 70.278%, TGT TEST ACC = 62.033%
+*** Epoch: 71/300   86/  87 took 93.97m - Loss:12.71317 SRC TEST ACC = 71.764%, TGT TEST ACC = 65.067%
+    Epoch: 72/300   86/  87 took 95.27m - Loss:12.71566 SRC TEST ACC = 71.542%, TGT TEST ACC = 63.256%
+    Epoch: 73/300   86/  87 took 96.58m - Loss:12.71278 SRC TEST ACC = 70.583%, TGT TEST ACC = 63.822%
+    Epoch: 74/300   86/  87 took 97.89m - Loss:12.70883 SRC TEST ACC = 69.444%, TGT TEST ACC = 62.511%
+    Epoch: 75/300   86/  87 took 99.19m - Loss:12.71206 SRC TEST ACC = 70.889%, TGT TEST ACC = 62.989%
+    Epoch: 76/300   86/  87 took 100.51m - Loss:12.71051 SRC TEST ACC = 71.347%, TGT TEST ACC = 62.822%
+    Epoch: 77/300   86/  87 took 101.81m - Loss:12.71133 SRC TEST ACC = 70.208%, TGT TEST ACC = 63.178%
+    Epoch: 78/300   86/  87 took 103.11m - Loss:12.70985 SRC TEST ACC = 68.931%, TGT TEST ACC = 63.900%
+    Epoch: 79/300   86/  87 took 104.42m - Loss:12.70850 SRC TEST ACC = 70.847%, TGT TEST ACC = 62.900%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+    Epoch: 80/300   86/  87 took 105.72m - Loss:12.70640 SRC TEST ACC = 69.250%, TGT TEST ACC = 64.622%
+    Epoch: 81/300   86/  87 took 107.03m - Loss:12.70544 SRC TEST ACC = 70.264%, TGT TEST ACC = 63.478%
+    Epoch: 82/300   86/  87 took 108.35m - Loss:12.70478 SRC TEST ACC = 70.639%, TGT TEST ACC = 64.844%
+    Epoch: 83/300   86/  87 took 109.65m - Loss:12.70490 SRC TEST ACC = 71.333%, TGT TEST ACC = 64.411%
+    Epoch: 84/300   86/  87 took 110.96m - Loss:12.70250 SRC TEST ACC = 70.681%, TGT TEST ACC = 62.756%
+    Epoch: 85/300   86/  87 took 112.27m - Loss:12.70588 SRC TEST ACC = 71.014%, TGT TEST ACC = 64.289%
+*** Epoch: 86/300   86/  87 took 113.58m - Loss:12.70667 SRC TEST ACC = 72.278%, TGT TEST ACC = 63.533%
+    Epoch: 87/300   86/  87 took 114.89m - Loss:12.70744 SRC TEST ACC = 70.389%, TGT TEST ACC = 62.311%
+    Epoch: 88/300   86/  87 took 116.20m - Loss:12.70444 SRC TEST ACC = 71.431%, TGT TEST ACC = 63.756%
+    Epoch: 89/300   86/  87 took 117.52m - Loss:12.70118 SRC TEST ACC = 72.167%, TGT TEST ACC = 64.600%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+    Epoch: 90/300   86/  87 took 118.82m - Loss:12.69860 SRC TEST ACC = 71.764%, TGT TEST ACC = 65.789%
+    Epoch: 91/300   86/  87 took 120.14m - Loss:12.69858 SRC TEST ACC = 71.292%, TGT TEST ACC = 65.367%
+    Epoch: 92/300   86/  87 took 121.45m - Loss:12.69706 SRC TEST ACC = 71.889%, TGT TEST ACC = 65.233%
+    Epoch: 93/300   86/  87 took 122.75m - Loss:12.69983 SRC TEST ACC = 71.389%, TGT TEST ACC = 63.989%
+    Epoch: 94/300   86/  87 took 124.07m - Loss:12.69610 SRC TEST ACC = 70.819%, TGT TEST ACC = 63.922%
+    Epoch: 95/300   86/  87 took 125.36m - Loss:12.69959 SRC TEST ACC = 71.472%, TGT TEST ACC = 64.833%
+    Epoch: 96/300   86/  87 took 126.67m - Loss:12.69685 SRC TEST ACC = 70.972%, TGT TEST ACC = 65.211%
+    Epoch: 97/300   86/  87 took 127.98m - Loss:12.69588 SRC TEST ACC = 71.778%, TGT TEST ACC = 65.022%
+    Epoch: 98/300   86/  87 took 129.29m - Loss:12.69792 SRC TEST ACC = 71.667%, TGT TEST ACC = 64.833%
+    Epoch: 99/300   86/  87 took 130.61m - Loss:12.69688 SRC TEST ACC = 70.069%, TGT TEST ACC = 65.044%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+    Epoch:100/300   86/  87 took 131.91m - Loss:12.69495 SRC TEST ACC = 71.347%, TGT TEST ACC = 64.711%
+    Epoch:101/300   86/  87 took 133.24m - Loss:12.69666 SRC TEST ACC = 71.431%, TGT TEST ACC = 64.911%
+*** Epoch:102/300   86/  87 took 134.55m - Loss:12.69335 SRC TEST ACC = 72.569%, TGT TEST ACC = 65.211%
+    Epoch:103/300   86/  87 took 135.86m - Loss:12.69520 SRC TEST ACC = 71.069%, TGT TEST ACC = 64.478%
+    Epoch:104/300   86/  87 took 137.17m - Loss:12.69261 SRC TEST ACC = 70.903%, TGT TEST ACC = 64.567%
+    Epoch:105/300   86/  87 took 138.47m - Loss:12.69367 SRC TEST ACC = 72.528%, TGT TEST ACC = 63.789%
+    Epoch:106/300   86/  87 took 139.77m - Loss:12.69468 SRC TEST ACC = 71.486%, TGT TEST ACC = 63.833%
+    Epoch:107/300   86/  87 took 141.08m - Loss:12.69491 SRC TEST ACC = 69.611%, TGT TEST ACC = 63.133%
+    Epoch:108/300   86/  87 took 142.39m - Loss:12.69725 SRC TEST ACC = 70.486%, TGT TEST ACC = 63.389%
+    Epoch:109/300   86/  87 took 143.68m - Loss:12.69487 SRC TEST ACC = 70.472%, TGT TEST ACC = 65.356%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+    Epoch:110/300   86/  87 took 144.99m - Loss:12.69123 SRC TEST ACC = 70.833%, TGT TEST ACC = 64.700%
+    Epoch:111/300   86/  87 took 146.30m - Loss:12.69137 SRC TEST ACC = 72.181%, TGT TEST ACC = 65.933%
+    Epoch:112/300   86/  87 took 147.62m - Loss:12.68960 SRC TEST ACC = 70.903%, TGT TEST ACC = 65.400%
+    Epoch:113/300   86/  87 took 148.93m - Loss:12.69212 SRC TEST ACC = 70.861%, TGT TEST ACC = 64.222%
+    Epoch:114/300   86/  87 took 150.23m - Loss:12.68816 SRC TEST ACC = 70.806%, TGT TEST ACC = 64.956%
+    Epoch:115/300   86/  87 took 151.54m - Loss:12.68980 SRC TEST ACC = 69.722%, TGT TEST ACC = 64.389%
+    Epoch:116/300   86/  87 took 152.83m - Loss:12.69028 SRC TEST ACC = 70.000%, TGT TEST ACC = 63.022%
+    Epoch:117/300   86/  87 took 154.14m - Loss:12.69192 SRC TEST ACC = 71.444%, TGT TEST ACC = 64.144%
+    Epoch:118/300   86/  87 took 155.44m - Loss:12.69170 SRC TEST ACC = 70.528%, TGT TEST ACC = 63.156%
+    Epoch:119/300   86/  87 took 156.75m - Loss:12.68958 SRC TEST ACC = 71.931%, TGT TEST ACC = 64.111%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+    Epoch:120/300   86/  87 took 158.07m - Loss:12.68807 SRC TEST ACC = 72.236%, TGT TEST ACC = 63.700%
+    Epoch:121/300   86/  87 took 159.39m - Loss:12.68772 SRC TEST ACC = 71.750%, TGT TEST ACC = 62.667%
+    Epoch:122/300   86/  87 took 160.71m - Loss:12.68862 SRC TEST ACC = 71.347%, TGT TEST ACC = 63.078%
+    Epoch:123/300   86/  87 took 162.02m - Loss:12.68620 SRC TEST ACC = 71.750%, TGT TEST ACC = 64.500%
+    Epoch:124/300   86/  87 took 163.33m - Loss:12.68734 SRC TEST ACC = 71.819%, TGT TEST ACC = 64.922%
+    Epoch:125/300   86/  87 took 164.64m - Loss:12.68887 SRC TEST ACC = 70.847%, TGT TEST ACC = 63.556%
+    Epoch:126/300   86/  87 took 165.94m - Loss:12.68700 SRC TEST ACC = 71.333%, TGT TEST ACC = 63.756%
+    Epoch:127/300   86/  87 took 167.25m - Loss:12.68353 SRC TEST ACC = 70.931%, TGT TEST ACC = 63.311%
+    Epoch:128/300   86/  87 took 168.55m - Loss:12.68577 SRC TEST ACC = 71.153%, TGT TEST ACC = 63.244%
+    Epoch:129/300   86/  87 took 169.85m - Loss:12.68505 SRC TEST ACC = 71.722%, TGT TEST ACC = 64.211%
+saved models in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_08_58_41_stl_cifar_0
+
+    Epoch:130/300   86/  87 took 171.16m - Loss:12.68497 SRC TEST ACC = 71.611%, TGT TEST ACC = 65.333%
+    Epoch:131/300   86/  87 took 172.49m - Loss:12.68530 SRC TEST ACC = 71.736%, TGT TEST ACC = 65.167%
+    Epoch:132/300   86/  87 took 173.80m - Loss:12.68300 SRC TEST ACC = 71.944%, TGT TEST ACC = 64.411%

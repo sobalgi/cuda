@@ -1,0 +1,152 @@
+
+
+Output log file /home/sourabh/prj/new_dade/./logs/19_02_04_17_27_47_cifar_stl_0.txt created
+File used to run the experiment : /home/sourabh/prj/new_dade/SB_main_00.py
+Output image files are stored in /home/sourabh/prj/new_dade/./images/19_02_04_17_27_47_cifar_stl_0 directory
+Model files are stored in /home/sourabh/prj/new_dade/./checkpoint/19_02_04_17_27_47_cifar_stl_0 directory
+
+Settings: absolute_base_path=/home/sourabh/prj/new_dade, absolute_pyfile_path=/home/sourabh/prj/new_dade/SB_main_00.py, args=Namespace(absolute_base_path='/home/sourabh/prj/new_dade', absolute_pyfile_path='/home/sourabh/prj/new_dade/SB_main_00.py', batch_size=64, buffer_size=10000, ckpt_dir='/home/sourabh/prj/new_dade/./checkpoint/19_02_04_17_27_47_cifar_stl_0', dataroot='./../sesml/data', dataset='mnist', epoch_size='large', exp='cifar_stl', experiment=None, gpus='3,2,1,0', image_size=28, img_dir='/home/sourabh/prj/new_dade/./images/19_02_04_17_27_47_cifar_stl_0', learning_rate=0.001, load_checkpoint='', log_file='/home/sourabh/prj/new_dade/./logs/19_02_04_17_27_47_cifar_stl_0.txt', logs_dir='/home/sourabh/prj/new_dade/./logs', nc=1, num_epochs=600, nz=100, plot_interval=20, seed=0, use_tied_gen=False, workers=12), base=1.0, batch_size=64, ckpt_dir=/home/sourabh/prj/new_dade/./checkpoint/19_02_04_17_27_47_cifar_stl_0, dataroot=/home/sourabh/prj/new_dade/./../sesml/data, dataset_path=/home/sourabh/prj/new_dade/./../sesml/data/mnist, epoch_size=large, exp=cifar_stl, experiment=cifar_stl, gpus=3,2,1,0, hostname=19_02_04_17_27_47, image_size=28, img_dir=/home/sourabh/prj/new_dade/./images/19_02_04_17_27_47_cifar_stl_0, lambda_AE_X=8.0, lambda_AE_Y=8.0, lambda_MMD=1.0, lambda_rg=16.0, lambda_sal=1.0, lambda_ssl=1.0, lambda_sul=1.0, lambda_tal=1.0, lambda_tul=1.0, learning_rate=0.001, log_file=/home/sourabh/prj/new_dade/./logs/19_02_04_17_27_47_cifar_stl_0.txt, log_num=0, logs_dir=/home/sourabh/prj/new_dade/./logs, nc=1, num_epochs=600, nz=100, plot_interval=20, seed=0, sigma_list=[1, 2, 4, 8, 16], timestamp=19_02_04_17_27_47, use_gpu=True, workers=12
+num_gpu: 
+current cuda device = 0
+using cuda device = 0
+SRC : CIFAR9: train: count=45000, X.shape=torch.Size([3, 32, 32]) test: count=9000, X.shape=torch.Size([3, 32, 32])
+TGT : STL9: train: count=4500, X.shape=torch.Size([3, 32, 32]) test: count=7200, X.shape=torch.Size([3, 32, 32])
+Loaded  Source and Target data respectively
+Building Network ...
+Encoder : DataParallel(
+  (module): Encoder(
+    (conv1_1): Conv2d(3, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv1_1_bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1_2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv1_2_bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1_3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv1_3_bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (pool1): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (drop1): Dropout(p=0.5)
+    (conv2_1): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv2_1_bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv2_2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv2_2_bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv2_3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (conv2_3_bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (pool2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (drop2): Dropout(p=0.5)
+    (conv3_1): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1))
+    (conv3_1_bn): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (nin3_2): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), padding=(1, 1))
+    (nin3_2_bn): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (nin3_3): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), padding=(1, 1))
+    (nin3_3_bn): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+)
+Classifier : DataParallel(
+  (module): Classifier(
+    (fc4): Linear(in_features=128, out_features=9, bias=True)
+  )
+)
+Generator : DataParallel(
+  (module): Generator(
+    (network): Sequential(
+      (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU(inplace)
+      (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (5): ReLU(inplace)
+      (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (8): ReLU(inplace)
+      (9): ConvTranspose2d(128, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (10): Tanh()
+    )
+  )
+)
+Network Built ...
+optimizerE : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+optimizerC : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+optimizerGS : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+optimizerGT : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+Training...
+Note : Simultaneous training of source and target domains. No swapping after e epochs ...
+*** Epoch:  0/600  174/ 175 took 6.03m - Loss:11.33201 SRC TEST ACC = 40.011%, TGT TEST ACC = 34.708%
+*** Epoch:  1/600  174/ 175 took 12.30m - Loss:11.34007 SRC TEST ACC = 41.922%, TGT TEST ACC = 39.972%
+*** Epoch:  2/600  174/ 175 took 18.32m - Loss:11.32811 SRC TEST ACC = 60.311%, TGT TEST ACC = 54.500%
+*** Epoch:  3/600  174/ 175 took 24.32m - Loss:11.32666 SRC TEST ACC = 63.022%, TGT TEST ACC = 57.639%
+*** Epoch:  4/600  174/ 175 took 30.45m - Loss:11.32641 SRC TEST ACC = 77.144%, TGT TEST ACC = 65.667%
+*** Epoch:  5/600  174/ 175 took 36.48m - Loss:11.32214 SRC TEST ACC = 78.600%, TGT TEST ACC = 66.111%
+*** Epoch:  6/600  174/ 175 took 42.39m - Loss:11.30620 SRC TEST ACC = 84.733%, TGT TEST ACC = 72.597%
+    Epoch:  7/600  174/ 175 took 48.48m - Loss:11.59350 SRC TEST ACC = 82.911%, TGT TEST ACC = 70.931%
+*** Epoch:  8/600  174/ 175 took 54.50m - Loss:11.39752 SRC TEST ACC = 86.878%, TGT TEST ACC = 74.208%
+*** Epoch:  9/600  174/ 175 took 60.47m - Loss:11.33806 SRC TEST ACC = 87.500%, TGT TEST ACC = 73.792%
+    Epoch: 10/600  174/ 175 took 66.57m - Loss:11.30996 SRC TEST ACC = 85.889%, TGT TEST ACC = 73.736%
+    Epoch: 11/600  174/ 175 took 72.56m - Loss:11.30721 SRC TEST ACC = 86.922%, TGT TEST ACC = 74.236%
+*** Epoch: 12/600  174/ 175 took 78.57m - Loss:11.29126 SRC TEST ACC = 87.544%, TGT TEST ACC = 73.681%
+    Epoch: 13/600  174/ 175 took 84.61m - Loss:11.28925 SRC TEST ACC = 87.289%, TGT TEST ACC = 74.778%
+    Epoch: 14/600  174/ 175 took 90.61m - Loss:11.27987 SRC TEST ACC = 87.267%, TGT TEST ACC = 74.736%
+    Epoch: 15/600  174/ 175 took 96.58m - Loss:11.28758 SRC TEST ACC = 87.189%, TGT TEST ACC = 73.833%
+*** Epoch: 16/600  174/ 175 took 102.76m - Loss:11.28763 SRC TEST ACC = 88.300%, TGT TEST ACC = 74.792%
+    Epoch: 17/600  174/ 175 took 109.02m - Loss:11.28167 SRC TEST ACC = 87.822%, TGT TEST ACC = 74.556%
+    Epoch: 18/600  174/ 175 took 116.24m - Loss:11.28047 SRC TEST ACC = 88.133%, TGT TEST ACC = 75.583%
+    Epoch: 19/600  174/ 175 took 123.67m - Loss:11.36359 SRC TEST ACC = 87.878%, TGT TEST ACC = 75.639%
+*** Epoch: 20/600  174/ 175 took 131.03m - Loss:11.27800 SRC TEST ACC = 88.522%, TGT TEST ACC = 75.389%
+*** Epoch: 21/600  174/ 175 took 138.39m - Loss:11.26386 SRC TEST ACC = 88.767%, TGT TEST ACC = 75.931%
+    Epoch: 22/600  174/ 175 took 145.86m - Loss:11.25957 SRC TEST ACC = 88.178%, TGT TEST ACC = 74.569%
+    Epoch: 23/600  174/ 175 took 153.07m - Loss:11.26333 SRC TEST ACC = 88.544%, TGT TEST ACC = 75.917%
+    Epoch: 24/600  174/ 175 took 159.60m - Loss:11.26003 SRC TEST ACC = 88.411%, TGT TEST ACC = 75.833%
+    Epoch: 25/600  174/ 175 took 167.01m - Loss:11.26599 SRC TEST ACC = 87.722%, TGT TEST ACC = 75.278%
+    Epoch: 26/600  174/ 175 took 174.21m - Loss:11.26478 SRC TEST ACC = 88.189%, TGT TEST ACC = 75.514%
+    Epoch: 27/600  174/ 175 took 181.51m - Loss:11.26167 SRC TEST ACC = 87.956%, TGT TEST ACC = 74.556%
+    Epoch: 28/600  174/ 175 took 188.91m - Loss:11.26161 SRC TEST ACC = 87.700%, TGT TEST ACC = 75.569%
+*** Epoch: 29/600  174/ 175 took 196.29m - Loss:11.25804 SRC TEST ACC = 88.833%, TGT TEST ACC = 74.875%
+    Epoch: 30/600  174/ 175 took 203.62m - Loss:11.24652 SRC TEST ACC = 88.778%, TGT TEST ACC = 75.472%
+    Epoch: 31/600  174/ 175 took 211.03m - Loss:11.24780 SRC TEST ACC = 88.722%, TGT TEST ACC = 74.625%
+*** Epoch: 32/600  174/ 175 took 218.41m - Loss:11.25025 SRC TEST ACC = 89.133%, TGT TEST ACC = 75.125%
+*** Epoch: 33/600  174/ 175 took 225.75m - Loss:11.25210 SRC TEST ACC = 89.267%, TGT TEST ACC = 75.125%
+    Epoch: 34/600  174/ 175 took 233.22m - Loss:11.24933 SRC TEST ACC = 88.433%, TGT TEST ACC = 75.347%
+    Epoch: 35/600  174/ 175 took 240.61m - Loss:11.25958 SRC TEST ACC = 88.544%, TGT TEST ACC = 74.569%
+    Epoch: 36/600  174/ 175 took 247.86m - Loss:11.25100 SRC TEST ACC = 88.589%, TGT TEST ACC = 76.069%
+    Epoch: 37/600  174/ 175 took 255.32m - Loss:11.24651 SRC TEST ACC = 88.800%, TGT TEST ACC = 76.278%
+    Epoch: 38/600  174/ 175 took 262.64m - Loss:11.24660 SRC TEST ACC = 87.756%, TGT TEST ACC = 75.069%
+    Epoch: 39/600  174/ 175 took 270.01m - Loss:11.24419 SRC TEST ACC = 87.900%, TGT TEST ACC = 74.611%
+    Epoch: 40/600  174/ 175 took 277.38m - Loss:11.23994 SRC TEST ACC = 88.722%, TGT TEST ACC = 76.000%
+    Epoch: 41/600  174/ 175 took 284.79m - Loss:11.24027 SRC TEST ACC = 88.656%, TGT TEST ACC = 74.986%
+    Epoch: 42/600  174/ 175 took 292.08m - Loss:11.23905 SRC TEST ACC = 89.100%, TGT TEST ACC = 75.236%
+    Epoch: 43/600  174/ 175 took 299.48m - Loss:11.23776 SRC TEST ACC = 88.911%, TGT TEST ACC = 75.944%
+    Epoch: 44/600  174/ 175 took 306.75m - Loss:11.22922 SRC TEST ACC = 88.967%, TGT TEST ACC = 75.611%
+    Epoch: 45/600  174/ 175 took 314.07m - Loss:11.23966 SRC TEST ACC = 88.567%, TGT TEST ACC = 74.736%
+    Epoch: 46/600  174/ 175 took 321.36m - Loss:11.24054 SRC TEST ACC = 88.811%, TGT TEST ACC = 74.903%
+    Epoch: 47/600  174/ 175 took 327.35m - Loss:11.47174 SRC TEST ACC = 89.267%, TGT TEST ACC = 75.722%
+    Epoch: 48/600  174/ 175 took 333.34m - Loss:11.23977 SRC TEST ACC = 88.578%, TGT TEST ACC = 75.472%
+    Epoch: 49/600  174/ 175 took 339.56m - Loss:11.24123 SRC TEST ACC = 88.600%, TGT TEST ACC = 75.111%
+    Epoch: 50/600  174/ 175 took 345.64m - Loss:11.22862 SRC TEST ACC = 88.711%, TGT TEST ACC = 75.819%
+    Epoch: 51/600  174/ 175 took 351.57m - Loss:11.22542 SRC TEST ACC = 89.156%, TGT TEST ACC = 75.778%
+    Epoch: 52/600  174/ 175 took 357.60m - Loss:11.22521 SRC TEST ACC = 89.011%, TGT TEST ACC = 75.875%
+    Epoch: 53/600  174/ 175 took 363.63m - Loss:11.22765 SRC TEST ACC = 89.100%, TGT TEST ACC = 74.972%
