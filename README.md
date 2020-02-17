@@ -6,18 +6,22 @@ The original code base for the experiments and results for Image datasets.
 Bibtex :
 
 ```
-@article{DBLP:journals/corr/abs-1909-03442,
+@inproceedings{DBLP:conf/icdm/BalgiD19,
   author    = {Sourabh Balgi and
                Ambedkar Dukkipati},
+  editor    = {Jianyong Wang and
+               Kyuseok Shim and
+               Xindong Wu},
   title     = {{CUDA:} Contradistinguisher for Unsupervised Domain Adaptation},
-  journal   = {CoRR},
-  volume    = {abs/1909.03442},
+  booktitle = {2019 {IEEE} International Conference on Data Mining, {ICDM} 2019,
+               Beijing, China, November 8-11, 2019},
+  pages     = {21--30},
+  publisher = {{IEEE}},
   year      = {2019},
-  url       = {http://arxiv.org/abs/1909.03442},
-  archivePrefix = {arXiv},
-  eprint    = {1909.03442},
-  timestamp = {Tue, 17 Sep 2019 11:23:44 +0200},
-  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1909-03442},
+  url       = {https://doi.org/10.1109/ICDM.2019.00012},
+  doi       = {10.1109/ICDM.2019.00012},
+  timestamp = {Mon, 03 Feb 2020 19:47:40 +0100},
+  biburl    = {https://dblp.org/rec/conf/icdm/BalgiD19.bib},
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 ```
