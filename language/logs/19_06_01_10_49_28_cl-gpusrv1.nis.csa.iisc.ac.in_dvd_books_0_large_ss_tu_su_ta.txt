@@ -1,0 +1,356 @@
+
+
+Output log file /home/scratch/sourabhbalgi/prj/man/code/./logs/19_06_01_10_49_28_cl-gpusrv1.nis.csa.iisc.ac.in_dvd_books_0_large_ss_tu_su_ta.txt created
+File used to run the experiment : /home/scratch/sourabhbalgi/prj/man/code/SB_lang_00_ss_tu_su_ta.py
+Model files are stored in /home/scratch/sourabhbalgi/prj/man/code/./checkpoint/19_06_01_10_49_28_cl-gpusrv1.nis.csa.iisc.ac.in_dvd_books_0_large_ss_tu_su_ta directory
+
+Settings: absolute_base_path=/home/scratch/sourabhbalgi/prj/man/code, absolute_pyfile_path=/home/scratch/sourabhbalgi/prj/man/code/SB_lang_00_ss_tu_su_ta.py, args=Namespace(absolute_base_path='/home/scratch/sourabhbalgi/prj/man/code', absolute_pyfile_path='/home/scratch/sourabhbalgi/prj/man/code/SB_lang_00_ss_tu_su_ta.py', batch_size=128, buffer_size=600, ckpt_dir='/home/scratch/sourabhbalgi/prj/man/code/./checkpoint/19_06_01_10_49_28_cl-gpusrv1.nis.csa.iisc.ac.in_dvd_books_0_large_ss_tu_su_ta', dataroot='./data/prep-amazon/amazon.pkl', epoch_size='large', exp='dvd_books', feature_num=5000, gpus='3', learning_rate=0.001, load_checkpoint='', log_file='/home/scratch/sourabhbalgi/prj/man/code/./logs/19_06_01_10_49_28_cl-gpusrv1.nis.csa.iisc.ac.in_dvd_books_0_large_ss_tu_su_ta.txt', logs_dir='/home/scratch/sourabhbalgi/prj/man/code/./logs', lr_decay_period=30, lr_decay_rate=0.6318, lr_decay_type='geometric', n_test_samples=500, network_type='dade', num_epochs=300, ramp=0, seed=1126, use_bn=False, use_drop=True, use_gumbel=False, use_sampler=True, weight_init='none', workers=2), batch_size=128, ckpt_dir=/home/scratch/sourabhbalgi/prj/man/code/./checkpoint/19_06_01_10_49_28_cl-gpusrv1.nis.csa.iisc.ac.in_dvd_books_0_large_ss_tu_su_ta, dataroot=/home/scratch/sourabhbalgi/prj/man/code/./data/prep-amazon/amazon.pkl, epoch_size=large, exp=dvd_books, experiment=dvd_books, gpus=3, hostname=19_06_01_10_49_28, lambda_sal=0.0, lambda_ssl=1.0, lambda_sul=1.0, lambda_tal=1.0, lambda_tsl=0.0, lambda_tul=1.0, learning_rate=0.001, log_file=/home/scratch/sourabhbalgi/prj/man/code/./logs/19_06_01_10_49_28_cl-gpusrv1.nis.csa.iisc.ac.in_dvd_books_0_large_ss_tu_su_ta.txt, log_num=0, logs_dir=/home/scratch/sourabhbalgi/prj/man/code/./logs, machinename=cl-gpusrv1.nis.csa.iisc.ac.in, num_epochs=300, ramp_sup_weight_in_list=[1.0], ramp_unsup_weight_in_list=[1.0], seed=1126, simul_train_src_tgt=True, timestamp=19_06_01_10_49_28, use_gpu=True, use_ramp_sup=False, use_ramp_unsup=False, use_sampler=True, workers=2
+num_gpu: 1, GPU-ID: 3
+current cuda device = 0
+using cuda device = 0
+
+SRC : DVD: train: count=2000, test: count=3586
+TGT : BOOKS: train: count=2000, test: count=4465
+
+Number of classes : 2
+
+Loaded  Source and Target data respectively
+
+Using epoch_size : large
+prior_src_train : tensor([0.4802, 0.5198], device='cuda:0')
+prior_tgt_train : tensor([0.5229, 0.4771], device='cuda:0')
+
+Building Network from DADE ...
+Encoder : DataParallel(
+  (module): Encoder(
+    (fc3): Linear(in_features=5000, out_features=50, bias=True)
+  )
+)
+Classifier : DataParallel(
+  (module): Classifier(
+    (drop1): Dropout(p=0.5)
+    (fc4): Linear(in_features=50, out_features=2, bias=True)
+  )
+)
+Network Built ...
+
+optimizerE : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+optimizerC : Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.5, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+
+Training...
+Note : Simultaneous training of source and target domains. No swapping after e epochs ...
+Checkpoint directory to store files for current run : /home/scratch/sourabhbalgi/prj/man/code/./checkpoint/19_06_01_10_49_28_cl-gpusrv1.nis.csa.iisc.ac.in_dvd_books_0_large_ss_tu_su_ta
+**++ E:000/300 #B:015, t=000.18m, L=10.7968, ACC : S_TRN= 59.79%, T_TRN= 54.48%, S_TST= 55.63%, T_TST= 53.89%
+**++ E:001/300 #B:015, t=000.59m, L=10.6486, ACC : S_TRN= 62.97%, T_TRN= 55.68%, S_TST= 58.53%, T_TST= 56.86%
+**++ E:002/300 #B:015, t=001.10m, L=10.5397, ACC : S_TRN= 67.71%, T_TRN= 59.53%, S_TST= 62.05%, T_TST= 59.51%
+**++ E:003/300 #B:015, t=001.55m, L=10.4137, ACC : S_TRN= 74.01%, T_TRN= 60.62%, S_TST= 65.06%, T_TST= 62.46%
+**++ E:004/300 #B:015, t=002.03m, L=10.3537, ACC : S_TRN= 80.31%, T_TRN= 65.62%, S_TST= 70.44%, T_TST= 67.19%
+**++ E:005/300 #B:015, t=002.43m, L=10.2206, ACC : S_TRN= 85.36%, T_TRN= 71.67%, S_TST= 74.82%, T_TST= 70.93%
+**++ E:006/300 #B:015, t=002.86m, L=10.1362, ACC : S_TRN= 88.28%, T_TRN= 71.30%, S_TST= 77.75%, T_TST= 73.37%
+**++ E:007/300 #B:015, t=003.23m, L=10.0652, ACC : S_TRN= 89.27%, T_TRN= 74.32%, S_TST= 79.98%, T_TST= 74.71%
+**++ E:008/300 #B:015, t=003.64m, L=10.0045, ACC : S_TRN= 90.83%, T_TRN= 73.02%, S_TST= 81.18%, T_TST= 75.52%
+**++ E:009/300 #B:015, t=004.02m, L=09.9764, ACC : S_TRN= 92.19%, T_TRN= 74.32%, S_TST= 82.60%, T_TST= 77.36%
+**++ E:010/300 #B:015, t=004.41m, L=09.9342, ACC : S_TRN= 92.40%, T_TRN= 75.89%, S_TST= 82.85%, T_TST= 78.01%
+**++ E:011/300 #B:015, t=004.83m, L=09.9326, ACC : S_TRN= 93.54%, T_TRN= 76.46%, S_TST= 82.88%, T_TST= 78.66%
+**++ E:012/300 #B:015, t=005.26m, L=09.8770, ACC : S_TRN= 94.06%, T_TRN= 75.52%, S_TST= 83.41%, T_TST= 78.90%
+**++ E:013/300 #B:015, t=005.66m, L=09.8806, ACC : S_TRN= 94.17%, T_TRN= 74.84%, S_TST= 83.71%, T_TST= 79.19%
+  ++ E:014/300 #B:015, t=006.08m, L=09.8504, ACC : S_TRN= 94.48%, T_TRN= 78.44%, S_TST= 83.41%, T_TST= 79.37%
+**++ E:015/300 #B:015, t=006.51m, L=09.8290, ACC : S_TRN= 94.95%, T_TRN= 78.12%, S_TST= 83.88%, T_TST= 79.60%
+     E:016/300 #B:015, t=007.02m, L=09.8209, ACC : S_TRN= 94.69%, T_TRN= 77.71%, S_TST= 83.80%, T_TST= 79.26%
+     E:017/300 #B:015, t=007.26m, L=09.7876, ACC : S_TRN= 95.31%, T_TRN= 76.72%, S_TST= 83.85%, T_TST= 79.35%
+**++ E:018/300 #B:015, t=007.45m, L=09.7442, ACC : S_TRN= 95.26%, T_TRN= 78.75%, S_TST= 83.88%, T_TST= 79.91%
+**   E:019/300 #B:015, t=007.91m, L=09.7418, ACC : S_TRN= 95.52%, T_TRN= 79.01%, S_TST= 83.88%, T_TST= 79.64%
+**++ E:020/300 #B:015, t=008.17m, L=09.7360, ACC : S_TRN= 96.61%, T_TRN= 79.06%, S_TST= 84.10%, T_TST= 79.91%
+**   E:021/300 #B:015, t=008.61m, L=09.7183, ACC : S_TRN= 95.68%, T_TRN= 79.69%, S_TST= 84.10%, T_TST= 79.64%
+**++ E:022/300 #B:015, t=008.91m, L=09.7207, ACC : S_TRN= 95.21%, T_TRN= 79.43%, S_TST= 84.16%, T_TST= 80.02%
+**   E:023/300 #B:015, t=009.37m, L=09.6899, ACC : S_TRN= 95.47%, T_TRN= 79.27%, S_TST= 84.16%, T_TST= 79.98%
+**   E:024/300 #B:015, t=009.70m, L=09.6795, ACC : S_TRN= 95.99%, T_TRN= 80.00%, S_TST= 84.27%, T_TST= 79.75%
+**   E:025/300 #B:015, t=009.99m, L=09.6820, ACC : S_TRN= 96.67%, T_TRN= 80.73%, S_TST= 84.30%, T_TST= 79.71%
+     E:026/300 #B:015, t=010.38m, L=09.6693, ACC : S_TRN= 96.30%, T_TRN= 79.38%, S_TST= 84.05%, T_TST= 79.71%
+**   E:027/300 #B:015, t=010.65m, L=09.6442, ACC : S_TRN= 97.08%, T_TRN= 79.01%, S_TST= 84.30%, T_TST= 79.66%
+     E:028/300 #B:015, t=011.03m, L=09.6350, ACC : S_TRN= 97.45%, T_TRN= 77.92%, S_TST= 84.27%, T_TST= 79.62%
+     E:029/300 #B:015, t=011.28m, L=09.6284, ACC : S_TRN= 97.40%, T_TRN= 80.52%, S_TST= 84.22%, T_TST= 79.84%
+     E:030/300 #B:015, t=011.53m, L=09.6105, ACC : S_TRN= 97.19%, T_TRN= 79.01%, S_TST= 84.19%, T_TST= 79.53%
+     E:031/300 #B:015, t=011.75m, L=09.6140, ACC : S_TRN= 97.29%, T_TRN= 79.64%, S_TST= 84.02%, T_TST= 79.66%
+     E:032/300 #B:015, t=012.01m, L=09.5947, ACC : S_TRN= 97.50%, T_TRN= 78.33%, S_TST= 83.97%, T_TST= 79.71%
+     E:033/300 #B:015, t=012.26m, L=09.5768, ACC : S_TRN= 97.66%, T_TRN= 78.12%, S_TST= 84.13%, T_TST= 79.35%
+     E:034/300 #B:015, t=012.56m, L=09.5980, ACC : S_TRN= 97.55%, T_TRN= 78.59%, S_TST= 84.22%, T_TST= 79.53%
+     E:035/300 #B:015, t=012.87m, L=09.5819, ACC : S_TRN= 97.86%, T_TRN= 78.02%, S_TST= 84.08%, T_TST= 79.46%
+     E:036/300 #B:015, t=013.13m, L=09.5772, ACC : S_TRN= 97.92%, T_TRN= 80.00%, S_TST= 84.13%, T_TST= 79.46%
+     E:037/300 #B:015, t=013.41m, L=09.5757, ACC : S_TRN= 98.12%, T_TRN= 77.71%, S_TST= 84.24%, T_TST= 79.42%
+     E:038/300 #B:015, t=013.68m, L=09.5705, ACC : S_TRN= 97.45%, T_TRN= 79.11%, S_TST= 84.08%, T_TST= 79.64%
+     E:039/300 #B:015, t=013.94m, L=09.5613, ACC : S_TRN= 98.39%, T_TRN= 79.58%, S_TST= 84.24%, T_TST= 79.53%
+     E:040/300 #B:015, t=014.23m, L=09.5477, ACC : S_TRN= 97.86%, T_TRN= 78.28%, S_TST= 84.16%, T_TST= 79.55%
+     E:041/300 #B:015, t=014.53m, L=09.5593, ACC : S_TRN= 98.07%, T_TRN= 78.12%, S_TST= 84.22%, T_TST= 79.31%
+     E:042/300 #B:015, t=014.80m, L=09.5223, ACC : S_TRN= 97.40%, T_TRN= 76.93%, S_TST= 84.27%, T_TST= 79.62%
+     E:043/300 #B:015, t=015.07m, L=09.5306, ACC : S_TRN= 98.07%, T_TRN= 80.42%, S_TST= 84.19%, T_TST= 79.57%
+**   E:044/300 #B:015, t=015.35m, L=09.5305, ACC : S_TRN= 98.39%, T_TRN= 80.68%, S_TST= 84.38%, T_TST= 79.53%
+     E:045/300 #B:015, t=015.66m, L=09.5375, ACC : S_TRN= 97.60%, T_TRN= 77.92%, S_TST= 84.24%, T_TST= 79.46%
+**   E:046/300 #B:015, t=015.93m, L=09.5273, ACC : S_TRN= 98.33%, T_TRN= 80.16%, S_TST= 84.47%, T_TST= 79.55%
+     E:047/300 #B:015, t=016.23m, L=09.5135, ACC : S_TRN= 97.97%, T_TRN= 78.28%, S_TST= 84.30%, T_TST= 79.51%
+     E:048/300 #B:015, t=016.52m, L=09.5197, ACC : S_TRN= 97.97%, T_TRN= 78.54%, S_TST= 84.27%, T_TST= 79.53%
+     E:049/300 #B:015, t=016.78m, L=09.5062, ACC : S_TRN= 98.07%, T_TRN= 79.64%, S_TST= 84.22%, T_TST= 79.57%
+**   E:050/300 #B:015, t=017.08m, L=09.5031, ACC : S_TRN= 98.12%, T_TRN= 79.95%, S_TST= 84.50%, T_TST= 79.71%
+     E:051/300 #B:015, t=017.47m, L=09.4952, ACC : S_TRN= 98.49%, T_TRN= 78.44%, S_TST= 84.27%, T_TST= 79.64%
+     E:052/300 #B:015, t=017.68m, L=09.4822, ACC : S_TRN= 98.39%, T_TRN= 78.39%, S_TST= 84.38%, T_TST= 79.69%
+     E:053/300 #B:015, t=017.98m, L=09.4857, ACC : S_TRN= 98.49%, T_TRN= 81.51%, S_TST= 84.36%, T_TST= 79.75%
+     E:054/300 #B:015, t=018.31m, L=09.4664, ACC : S_TRN= 98.02%, T_TRN= 81.04%, S_TST= 84.24%, T_TST= 79.51%
+     E:055/300 #B:015, t=018.63m, L=09.4744, ACC : S_TRN= 98.49%, T_TRN= 79.64%, S_TST= 84.05%, T_TST= 79.51%
+     E:056/300 #B:015, t=018.85m, L=09.4936, ACC : S_TRN= 98.49%, T_TRN= 79.43%, S_TST= 84.33%, T_TST= 79.51%
+     E:057/300 #B:015, t=019.13m, L=09.4638, ACC : S_TRN= 98.54%, T_TRN= 78.39%, S_TST= 84.05%, T_TST= 79.33%
+     E:058/300 #B:015, t=019.46m, L=09.4717, ACC : S_TRN= 98.39%, T_TRN= 78.59%, S_TST= 84.33%, T_TST= 79.40%
+     E:059/300 #B:015, t=019.72m, L=09.4734, ACC : S_TRN= 98.23%, T_TRN= 79.43%, S_TST= 84.13%, T_TST= 79.44%
+     E:060/300 #B:015, t=020.00m, L=09.4541, ACC : S_TRN= 98.65%, T_TRN= 78.02%, S_TST= 84.10%, T_TST= 79.17%
+     E:061/300 #B:015, t=020.36m, L=09.4671, ACC : S_TRN= 97.81%, T_TRN= 80.62%, S_TST= 84.24%, T_TST= 79.53%
+     E:062/300 #B:015, t=020.65m, L=09.4557, ACC : S_TRN= 99.06%, T_TRN= 78.70%, S_TST= 84.38%, T_TST= 79.53%
+     E:063/300 #B:015, t=020.94m, L=09.4481, ACC : S_TRN= 99.01%, T_TRN= 78.44%, S_TST= 84.24%, T_TST= 79.60%
+     E:064/300 #B:015, t=021.20m, L=09.4261, ACC : S_TRN= 98.96%, T_TRN= 77.97%, S_TST= 84.30%, T_TST= 79.53%
+     E:065/300 #B:015, t=021.45m, L=09.4564, ACC : S_TRN= 98.96%, T_TRN= 79.79%, S_TST= 84.22%, T_TST= 79.48%
+     E:066/300 #B:015, t=021.74m, L=09.4587, ACC : S_TRN= 98.96%, T_TRN= 79.11%, S_TST= 84.16%, T_TST= 79.48%
+     E:067/300 #B:015, t=022.03m, L=09.4530, ACC : S_TRN= 98.91%, T_TRN= 79.06%, S_TST= 84.27%, T_TST= 79.44%
+     E:068/300 #B:015, t=022.31m, L=09.4379, ACC : S_TRN= 99.06%, T_TRN= 79.58%, S_TST= 84.22%, T_TST= 79.40%
+     E:069/300 #B:015, t=022.60m, L=09.4387, ACC : S_TRN= 99.17%, T_TRN= 79.84%, S_TST= 84.41%, T_TST= 79.57%
+     E:070/300 #B:015, t=022.93m, L=09.4318, ACC : S_TRN= 98.65%, T_TRN= 78.54%, S_TST= 84.41%, T_TST= 79.60%
+     E:071/300 #B:015, t=023.21m, L=09.4383, ACC : S_TRN= 98.96%, T_TRN= 79.43%, S_TST= 84.05%, T_TST= 79.35%
+     E:072/300 #B:015, t=023.47m, L=09.4263, ACC : S_TRN= 99.17%, T_TRN= 78.28%, S_TST= 84.19%, T_TST= 79.46%
+     E:073/300 #B:015, t=023.74m, L=09.4374, ACC : S_TRN= 99.17%, T_TRN= 80.26%, S_TST= 84.08%, T_TST= 79.33%
+     E:074/300 #B:015, t=024.06m, L=09.4463, ACC : S_TRN= 98.91%, T_TRN= 79.58%, S_TST= 84.10%, T_TST= 79.44%
+     E:075/300 #B:015, t=024.35m, L=09.4185, ACC : S_TRN= 99.32%, T_TRN= 80.31%, S_TST= 84.19%, T_TST= 79.53%
+     E:076/300 #B:015, t=024.64m, L=09.4294, ACC : S_TRN= 98.96%, T_TRN= 80.47%, S_TST= 84.19%, T_TST= 79.55%
+     E:077/300 #B:015, t=024.93m, L=09.4238, ACC : S_TRN= 98.75%, T_TRN= 79.53%, S_TST= 84.16%, T_TST= 79.57%
+     E:078/300 #B:015, t=025.23m, L=09.4173, ACC : S_TRN= 99.32%, T_TRN= 79.74%, S_TST= 84.08%, T_TST= 79.51%
+     E:079/300 #B:015, t=025.53m, L=09.4225, ACC : S_TRN= 99.58%, T_TRN= 79.84%, S_TST= 83.97%, T_TST= 79.42%
+     E:080/300 #B:015, t=025.82m, L=09.4396, ACC : S_TRN= 99.01%, T_TRN= 78.96%, S_TST= 84.10%, T_TST= 79.40%
+     E:081/300 #B:015, t=026.14m, L=09.4124, ACC : S_TRN= 99.64%, T_TRN= 81.25%, S_TST= 84.16%, T_TST= 79.48%
+     E:082/300 #B:015, t=026.49m, L=09.4123, ACC : S_TRN= 99.01%, T_TRN= 78.85%, S_TST= 84.05%, T_TST= 79.26%
+     E:083/300 #B:015, t=026.79m, L=09.4257, ACC : S_TRN= 99.17%, T_TRN= 80.16%, S_TST= 84.16%, T_TST= 79.31%
+     E:084/300 #B:015, t=027.11m, L=09.4017, ACC : S_TRN= 99.32%, T_TRN= 78.70%, S_TST= 84.16%, T_TST= 79.33%
+     E:085/300 #B:015, t=027.38m, L=09.4044, ACC : S_TRN= 99.38%, T_TRN= 81.35%, S_TST= 84.30%, T_TST= 79.31%
+     E:086/300 #B:015, t=027.71m, L=09.4138, ACC : S_TRN= 99.58%, T_TRN= 78.70%, S_TST= 84.19%, T_TST= 79.35%
+     E:087/300 #B:015, t=028.00m, L=09.4009, ACC : S_TRN= 99.43%, T_TRN= 79.95%, S_TST= 84.05%, T_TST= 79.40%
+     E:088/300 #B:015, t=028.27m, L=09.4284, ACC : S_TRN= 99.48%, T_TRN= 79.27%, S_TST= 84.08%, T_TST= 79.35%
+     E:089/300 #B:015, t=028.58m, L=09.3945, ACC : S_TRN= 99.38%, T_TRN= 79.17%, S_TST= 84.10%, T_TST= 79.19%
+     E:090/300 #B:015, t=028.90m, L=09.3927, ACC : S_TRN= 99.48%, T_TRN= 78.75%, S_TST= 84.05%, T_TST= 79.31%
+     E:091/300 #B:015, t=029.16m, L=09.3951, ACC : S_TRN= 99.69%, T_TRN= 78.70%, S_TST= 84.02%, T_TST= 79.35%
+     E:092/300 #B:015, t=029.45m, L=09.3844, ACC : S_TRN= 99.53%, T_TRN= 79.69%, S_TST= 84.16%, T_TST= 79.40%
+     E:093/300 #B:015, t=029.76m, L=09.3819, ACC : S_TRN= 99.27%, T_TRN= 79.58%, S_TST= 84.19%, T_TST= 79.55%
+     E:094/300 #B:015, t=030.00m, L=09.3779, ACC : S_TRN= 99.27%, T_TRN= 80.89%, S_TST= 84.22%, T_TST= 79.42%
+     E:095/300 #B:015, t=030.29m, L=09.3919, ACC : S_TRN= 99.64%, T_TRN= 80.05%, S_TST= 84.10%, T_TST= 79.53%
+     E:096/300 #B:015, t=030.58m, L=09.4158, ACC : S_TRN= 99.38%, T_TRN= 79.43%, S_TST= 84.16%, T_TST= 79.46%
+     E:097/300 #B:015, t=030.88m, L=09.3935, ACC : S_TRN= 99.27%, T_TRN= 80.47%, S_TST= 84.08%, T_TST= 79.48%
+     E:098/300 #B:015, t=031.23m, L=09.3955, ACC : S_TRN= 99.53%, T_TRN= 80.21%, S_TST= 84.08%, T_TST= 79.44%
+     E:099/300 #B:015, t=031.49m, L=09.3916, ACC : S_TRN= 99.48%, T_TRN= 79.53%, S_TST= 84.08%, T_TST= 79.40%
+     E:100/300 #B:015, t=031.78m, L=09.3790, ACC : S_TRN= 99.38%, T_TRN= 79.74%, S_TST= 84.19%, T_TST= 79.40%
+     E:101/300 #B:015, t=032.11m, L=09.3834, ACC : S_TRN= 99.69%, T_TRN= 80.42%, S_TST= 84.05%, T_TST= 79.51%
+     E:102/300 #B:015, t=032.45m, L=09.3766, ACC : S_TRN= 99.84%, T_TRN= 79.95%, S_TST= 84.05%, T_TST= 79.53%
+     E:103/300 #B:015, t=032.70m, L=09.3937, ACC : S_TRN= 99.38%, T_TRN= 79.43%, S_TST= 84.02%, T_TST= 79.42%
+     E:104/300 #B:015, t=033.03m, L=09.3649, ACC : S_TRN= 99.53%, T_TRN= 80.26%, S_TST= 84.19%, T_TST= 79.53%
+     E:105/300 #B:015, t=033.35m, L=09.3864, ACC : S_TRN= 99.69%, T_TRN= 78.39%, S_TST= 84.19%, T_TST= 79.57%
+     E:106/300 #B:015, t=033.63m, L=09.3725, ACC : S_TRN= 99.48%, T_TRN= 79.74%, S_TST= 84.22%, T_TST= 79.60%
+     E:107/300 #B:015, t=033.90m, L=09.3558, ACC : S_TRN= 99.64%, T_TRN= 80.83%, S_TST= 84.22%, T_TST= 79.51%
+     E:108/300 #B:015, t=034.24m, L=09.3710, ACC : S_TRN= 99.43%, T_TRN= 79.64%, S_TST= 84.16%, T_TST= 79.48%
+     E:109/300 #B:015, t=034.53m, L=09.3688, ACC : S_TRN= 99.53%, T_TRN= 78.91%, S_TST= 84.10%, T_TST= 79.44%
+     E:110/300 #B:015, t=034.82m, L=09.3839, ACC : S_TRN= 99.58%, T_TRN= 78.07%, S_TST= 84.10%, T_TST= 79.42%
+     E:111/300 #B:015, t=035.12m, L=09.3818, ACC : S_TRN= 99.48%, T_TRN= 78.85%, S_TST= 84.16%, T_TST= 79.33%
+     E:112/300 #B:015, t=035.41m, L=09.3764, ACC : S_TRN= 99.58%, T_TRN= 77.92%, S_TST= 83.99%, T_TST= 79.37%
+     E:113/300 #B:015, t=035.73m, L=09.3756, ACC : S_TRN= 99.69%, T_TRN= 80.62%, S_TST= 84.10%, T_TST= 79.28%
+     E:114/300 #B:015, t=036.08m, L=09.3691, ACC : S_TRN= 99.69%, T_TRN= 77.76%, S_TST= 84.05%, T_TST= 79.31%
+     E:115/300 #B:015, t=036.36m, L=09.3637, ACC : S_TRN= 99.58%, T_TRN= 80.10%, S_TST= 84.10%, T_TST= 79.22%
+     E:116/300 #B:015, t=036.66m, L=09.3644, ACC : S_TRN= 99.58%, T_TRN= 78.96%, S_TST= 84.08%, T_TST= 79.15%
+     E:117/300 #B:015, t=036.97m, L=09.3577, ACC : S_TRN= 99.64%, T_TRN= 79.27%, S_TST= 84.10%, T_TST= 79.08%
+     E:118/300 #B:015, t=037.25m, L=09.3834, ACC : S_TRN= 99.64%, T_TRN= 81.67%, S_TST= 83.97%, T_TST= 79.13%
+     E:119/300 #B:015, t=037.54m, L=09.3698, ACC : S_TRN= 99.74%, T_TRN= 79.64%, S_TST= 84.02%, T_TST= 79.15%
+     E:120/300 #B:015, t=037.80m, L=09.3593, ACC : S_TRN= 99.58%, T_TRN= 79.01%, S_TST= 84.13%, T_TST= 79.19%
+     E:121/300 #B:015, t=038.11m, L=09.3598, ACC : S_TRN= 99.74%, T_TRN= 77.92%, S_TST= 84.19%, T_TST= 79.22%
+     E:122/300 #B:015, t=038.37m, L=09.3550, ACC : S_TRN= 99.64%, T_TRN= 78.39%, S_TST= 84.16%, T_TST= 79.15%
+     E:123/300 #B:015, t=038.70m, L=09.3657, ACC : S_TRN= 99.69%, T_TRN= 79.58%, S_TST= 84.16%, T_TST= 79.17%
+     E:124/300 #B:015, t=039.00m, L=09.3561, ACC : S_TRN= 99.69%, T_TRN= 78.54%, S_TST= 84.10%, T_TST= 79.10%
+     E:125/300 #B:015, t=039.31m, L=09.3457, ACC : S_TRN= 99.48%, T_TRN= 81.35%, S_TST= 84.13%, T_TST= 79.19%
+     E:126/300 #B:015, t=039.58m, L=09.3624, ACC : S_TRN= 99.79%, T_TRN= 78.70%, S_TST= 84.05%, T_TST= 79.15%
+     E:127/300 #B:015, t=039.87m, L=09.3587, ACC : S_TRN= 99.53%, T_TRN= 80.52%, S_TST= 84.05%, T_TST= 79.06%
+     E:128/300 #B:015, t=040.16m, L=09.3511, ACC : S_TRN= 99.48%, T_TRN= 78.91%, S_TST= 84.10%, T_TST= 79.01%
+     E:129/300 #B:015, t=040.48m, L=09.3588, ACC : S_TRN= 99.58%, T_TRN= 79.38%, S_TST= 84.16%, T_TST= 78.99%
+     E:130/300 #B:015, t=040.78m, L=09.3544, ACC : S_TRN= 99.53%, T_TRN= 79.53%, S_TST= 84.16%, T_TST= 79.04%
+     E:131/300 #B:015, t=041.14m, L=09.3548, ACC : S_TRN= 99.79%, T_TRN= 79.90%, S_TST= 84.22%, T_TST= 79.15%
+     E:132/300 #B:015, t=041.42m, L=09.3502, ACC : S_TRN= 99.69%, T_TRN= 77.24%, S_TST= 84.13%, T_TST= 78.99%
+     E:133/300 #B:015, t=041.73m, L=09.3470, ACC : S_TRN= 99.69%, T_TRN= 78.44%, S_TST= 84.19%, T_TST= 79.08%
+     E:134/300 #B:015, t=042.04m, L=09.3361, ACC : S_TRN= 99.48%, T_TRN= 78.39%, S_TST= 83.94%, T_TST= 79.15%
+     E:135/300 #B:015, t=042.36m, L=09.3661, ACC : S_TRN= 99.53%, T_TRN= 78.91%, S_TST= 84.13%, T_TST= 79.19%
+     E:136/300 #B:015, t=042.66m, L=09.3372, ACC : S_TRN= 99.64%, T_TRN= 79.32%, S_TST= 84.19%, T_TST= 79.19%
+     E:137/300 #B:015, t=042.94m, L=09.3510, ACC : S_TRN= 99.69%, T_TRN= 79.06%, S_TST= 84.13%, T_TST= 79.15%
+     E:138/300 #B:015, t=043.16m, L=09.3531, ACC : S_TRN= 99.38%, T_TRN= 78.28%, S_TST= 84.13%, T_TST= 79.15%
+     E:139/300 #B:015, t=043.50m, L=09.3489, ACC : S_TRN= 99.79%, T_TRN= 79.95%, S_TST= 84.05%, T_TST= 79.10%
+     E:140/300 #B:015, t=043.80m, L=09.3334, ACC : S_TRN= 99.64%, T_TRN= 79.90%, S_TST= 84.02%, T_TST= 79.13%
+     E:141/300 #B:015, t=044.08m, L=09.3476, ACC : S_TRN= 99.38%, T_TRN= 80.99%, S_TST= 84.08%, T_TST= 79.19%
+     E:142/300 #B:015, t=044.35m, L=09.3399, ACC : S_TRN= 99.64%, T_TRN= 78.59%, S_TST= 84.13%, T_TST= 79.24%
+     E:143/300 #B:015, t=044.59m, L=09.3507, ACC : S_TRN= 99.64%, T_TRN= 76.82%, S_TST= 83.99%, T_TST= 79.28%
+     E:144/300 #B:015, t=044.91m, L=09.3459, ACC : S_TRN= 99.69%, T_TRN= 79.22%, S_TST= 84.10%, T_TST= 79.01%
+     E:145/300 #B:015, t=045.20m, L=09.3608, ACC : S_TRN= 99.74%, T_TRN= 79.58%, S_TST= 84.05%, T_TST= 79.17%
+     E:146/300 #B:015, t=045.48m, L=09.3505, ACC : S_TRN= 99.74%, T_TRN= 78.39%, S_TST= 84.05%, T_TST= 79.17%
+     E:147/300 #B:015, t=045.77m, L=09.3480, ACC : S_TRN= 99.64%, T_TRN= 80.99%, S_TST= 84.08%, T_TST= 79.15%
+     E:148/300 #B:015, t=046.06m, L=09.3434, ACC : S_TRN= 99.58%, T_TRN= 78.18%, S_TST= 84.08%, T_TST= 79.17%
+     E:149/300 #B:015, t=046.35m, L=09.3406, ACC : S_TRN= 99.69%, T_TRN= 80.16%, S_TST= 84.10%, T_TST= 79.22%
+     E:150/300 #B:015, t=046.65m, L=09.3430, ACC : S_TRN= 99.69%, T_TRN= 80.10%, S_TST= 84.05%, T_TST= 79.17%
+     E:151/300 #B:015, t=046.91m, L=09.3396, ACC : S_TRN= 99.74%, T_TRN= 78.75%, S_TST= 84.05%, T_TST= 79.24%
+     E:152/300 #B:015, t=047.14m, L=09.3280, ACC : S_TRN= 99.74%, T_TRN= 79.38%, S_TST= 83.99%, T_TST= 79.24%
+     E:153/300 #B:015, t=047.43m, L=09.3365, ACC : S_TRN= 99.58%, T_TRN= 79.64%, S_TST= 84.08%, T_TST= 79.24%
+     E:154/300 #B:015, t=047.70m, L=09.3447, ACC : S_TRN= 99.69%, T_TRN= 79.90%, S_TST= 84.13%, T_TST= 79.19%
+     E:155/300 #B:015, t=048.06m, L=09.3404, ACC : S_TRN= 99.69%, T_TRN= 79.43%, S_TST= 84.05%, T_TST= 79.26%
+     E:156/300 #B:015, t=048.32m, L=09.3404, ACC : S_TRN= 99.84%, T_TRN= 79.48%, S_TST= 84.02%, T_TST= 79.19%
+     E:157/300 #B:015, t=048.69m, L=09.3458, ACC : S_TRN= 99.74%, T_TRN= 79.64%, S_TST= 84.05%, T_TST= 79.19%
+     E:158/300 #B:015, t=048.99m, L=09.3373, ACC : S_TRN= 99.69%, T_TRN= 79.11%, S_TST= 83.94%, T_TST= 79.24%
+     E:159/300 #B:015, t=049.31m, L=09.3299, ACC : S_TRN= 99.64%, T_TRN= 80.68%, S_TST= 83.94%, T_TST= 79.17%
+     E:160/300 #B:015, t=049.60m, L=09.3353, ACC : S_TRN= 99.95%, T_TRN= 80.99%, S_TST= 83.99%, T_TST= 79.15%
+     E:161/300 #B:015, t=049.91m, L=09.3224, ACC : S_TRN= 99.58%, T_TRN= 78.07%, S_TST= 84.02%, T_TST= 79.10%
+     E:162/300 #B:015, t=050.21m, L=09.3340, ACC : S_TRN= 99.64%, T_TRN= 80.10%, S_TST= 83.99%, T_TST= 79.22%
+     E:163/300 #B:015, t=050.54m, L=09.3377, ACC : S_TRN= 99.64%, T_TRN= 78.23%, S_TST= 83.97%, T_TST= 79.15%
+     E:164/300 #B:015, t=050.84m, L=09.3178, ACC : S_TRN= 99.69%, T_TRN= 78.54%, S_TST= 83.99%, T_TST= 79.19%
+     E:165/300 #B:015, t=051.14m, L=09.3376, ACC : S_TRN= 99.48%, T_TRN= 79.48%, S_TST= 83.91%, T_TST= 79.19%
+     E:166/300 #B:015, t=051.45m, L=09.3302, ACC : S_TRN= 99.48%, T_TRN= 78.49%, S_TST= 83.91%, T_TST= 79.15%
+     E:167/300 #B:015, t=051.66m, L=09.3233, ACC : S_TRN= 99.79%, T_TRN= 78.39%, S_TST= 83.97%, T_TST= 79.13%
+     E:168/300 #B:015, t=051.94m, L=09.3293, ACC : S_TRN= 99.53%, T_TRN= 80.00%, S_TST= 83.97%, T_TST= 79.13%
+     E:169/300 #B:015, t=052.21m, L=09.3259, ACC : S_TRN= 99.43%, T_TRN= 79.69%, S_TST= 84.02%, T_TST= 79.15%
+     E:170/300 #B:015, t=052.48m, L=09.3449, ACC : S_TRN= 99.58%, T_TRN= 78.70%, S_TST= 83.91%, T_TST= 79.10%
+     E:171/300 #B:015, t=052.78m, L=09.3308, ACC : S_TRN= 99.74%, T_TRN= 80.16%, S_TST= 83.97%, T_TST= 79.15%
+     E:172/300 #B:015, t=053.10m, L=09.3287, ACC : S_TRN= 99.43%, T_TRN= 79.48%, S_TST= 83.91%, T_TST= 79.19%
+     E:173/300 #B:015, t=053.45m, L=09.3247, ACC : S_TRN= 99.69%, T_TRN= 79.64%, S_TST= 83.94%, T_TST= 79.10%
+     E:174/300 #B:015, t=053.72m, L=09.3361, ACC : S_TRN= 99.64%, T_TRN= 79.48%, S_TST= 83.94%, T_TST= 79.10%
+     E:175/300 #B:015, t=053.98m, L=09.3270, ACC : S_TRN= 99.79%, T_TRN= 78.39%, S_TST= 83.97%, T_TST= 79.13%
+     E:176/300 #B:015, t=054.29m, L=09.3182, ACC : S_TRN= 99.95%, T_TRN= 78.70%, S_TST= 83.99%, T_TST= 79.08%
+     E:177/300 #B:015, t=054.59m, L=09.3226, ACC : S_TRN= 99.69%, T_TRN= 80.68%, S_TST= 83.97%, T_TST= 79.17%
+     E:178/300 #B:015, t=054.86m, L=09.3217, ACC : S_TRN= 99.69%, T_TRN= 78.96%, S_TST= 83.99%, T_TST= 79.22%
+     E:179/300 #B:015, t=055.13m, L=09.3187, ACC : S_TRN= 99.43%, T_TRN= 79.90%, S_TST= 83.99%, T_TST= 79.08%
+     E:180/300 #B:015, t=055.38m, L=09.3243, ACC : S_TRN= 99.48%, T_TRN= 78.85%, S_TST= 83.97%, T_TST= 79.15%
+     E:181/300 #B:015, t=055.69m, L=09.3257, ACC : S_TRN= 99.43%, T_TRN= 79.90%, S_TST= 83.99%, T_TST= 79.13%
+     E:182/300 #B:015, t=056.00m, L=09.3150, ACC : S_TRN= 99.74%, T_TRN= 78.44%, S_TST= 83.99%, T_TST= 79.15%
+     E:183/300 #B:015, t=056.33m, L=09.3331, ACC : S_TRN= 99.58%, T_TRN= 79.64%, S_TST= 83.97%, T_TST= 79.08%
+     E:184/300 #B:015, t=056.63m, L=09.3183, ACC : S_TRN= 99.53%, T_TRN= 77.08%, S_TST= 83.97%, T_TST= 79.06%
+     E:185/300 #B:015, t=056.92m, L=09.3228, ACC : S_TRN= 99.69%, T_TRN= 80.52%, S_TST= 83.94%, T_TST= 79.08%
+     E:186/300 #B:015, t=057.26m, L=09.3404, ACC : S_TRN= 99.74%, T_TRN= 78.59%, S_TST= 83.94%, T_TST= 79.08%
+     E:187/300 #B:015, t=057.52m, L=09.3176, ACC : S_TRN= 99.48%, T_TRN= 78.85%, S_TST= 83.94%, T_TST= 79.06%
+     E:188/300 #B:015, t=057.78m, L=09.3288, ACC : S_TRN= 99.48%, T_TRN= 80.05%, S_TST= 83.91%, T_TST= 78.99%
+     E:189/300 #B:015, t=058.11m, L=09.3275, ACC : S_TRN= 99.69%, T_TRN= 80.05%, S_TST= 83.94%, T_TST= 79.01%
+     E:190/300 #B:015, t=058.40m, L=09.3252, ACC : S_TRN= 99.64%, T_TRN= 78.91%, S_TST= 83.94%, T_TST= 79.04%
+     E:191/300 #B:015, t=058.66m, L=09.3326, ACC : S_TRN= 99.64%, T_TRN= 80.57%, S_TST= 83.94%, T_TST= 79.06%
+     E:192/300 #B:015, t=058.96m, L=09.3189, ACC : S_TRN= 99.79%, T_TRN= 80.52%, S_TST= 83.94%, T_TST= 79.01%
+     E:193/300 #B:015, t=059.27m, L=09.3220, ACC : S_TRN= 99.74%, T_TRN= 78.96%, S_TST= 83.88%, T_TST= 79.06%
+     E:194/300 #B:015, t=059.60m, L=09.3254, ACC : S_TRN= 99.74%, T_TRN= 80.57%, S_TST= 83.85%, T_TST= 79.06%
+     E:195/300 #B:015, t=059.91m, L=09.3239, ACC : S_TRN= 99.64%, T_TRN= 80.10%, S_TST= 83.88%, T_TST= 79.04%
+     E:196/300 #B:015, t=060.16m, L=09.3247, ACC : S_TRN= 99.69%, T_TRN= 79.74%, S_TST= 83.91%, T_TST= 79.01%
+     E:197/300 #B:015, t=060.46m, L=09.3131, ACC : S_TRN= 99.43%, T_TRN= 80.26%, S_TST= 83.91%, T_TST= 79.06%
+     E:198/300 #B:015, t=060.75m, L=09.3215, ACC : S_TRN= 99.58%, T_TRN= 77.76%, S_TST= 83.91%, T_TST= 79.01%
+     E:199/300 #B:015, t=061.04m, L=09.3123, ACC : S_TRN= 99.53%, T_TRN= 78.85%, S_TST= 83.91%, T_TST= 79.08%
+     E:200/300 #B:015, t=061.31m, L=09.3226, ACC : S_TRN= 99.74%, T_TRN= 79.90%, S_TST= 83.97%, T_TST= 79.04%
+     E:201/300 #B:015, t=061.58m, L=09.3108, ACC : S_TRN= 99.53%, T_TRN= 79.79%, S_TST= 83.94%, T_TST= 79.01%
+     E:202/300 #B:015, t=061.89m, L=09.3285, ACC : S_TRN= 99.48%, T_TRN= 79.27%, S_TST= 83.94%, T_TST= 79.10%
+     E:203/300 #B:015, t=062.15m, L=09.3329, ACC : S_TRN= 99.79%, T_TRN= 78.91%, S_TST= 83.94%, T_TST= 79.10%
+     E:204/300 #B:015, t=062.48m, L=09.3219, ACC : S_TRN= 99.69%, T_TRN= 80.21%, S_TST= 83.97%, T_TST= 79.06%
+     E:205/300 #B:015, t=062.82m, L=09.3202, ACC : S_TRN= 99.90%, T_TRN= 79.01%, S_TST= 83.97%, T_TST= 79.06%
+     E:206/300 #B:015, t=063.12m, L=09.3184, ACC : S_TRN= 99.53%, T_TRN= 79.90%, S_TST= 83.97%, T_TST= 79.01%
+     E:207/300 #B:015, t=063.41m, L=09.3294, ACC : S_TRN= 99.84%, T_TRN= 79.01%, S_TST= 83.97%, T_TST= 79.04%
+     E:208/300 #B:015, t=063.73m, L=09.3123, ACC : S_TRN= 99.69%, T_TRN= 80.62%, S_TST= 83.97%, T_TST= 79.04%
+     E:209/300 #B:015, t=064.05m, L=09.3219, ACC : S_TRN= 99.84%, T_TRN= 78.85%, S_TST= 83.94%, T_TST= 79.06%
+     E:210/300 #B:015, t=064.35m, L=09.3143, ACC : S_TRN= 99.90%, T_TRN= 78.33%, S_TST= 83.94%, T_TST= 79.04%
+     E:211/300 #B:015, t=064.67m, L=09.3225, ACC : S_TRN= 99.64%, T_TRN= 77.40%, S_TST= 83.94%, T_TST= 79.10%
+     E:212/300 #B:015, t=065.01m, L=09.3102, ACC : S_TRN= 99.74%, T_TRN= 78.33%, S_TST= 83.91%, T_TST= 79.06%
+     E:213/300 #B:015, t=065.26m, L=09.3309, ACC : S_TRN= 99.58%, T_TRN= 79.84%, S_TST= 83.91%, T_TST= 79.06%
+     E:214/300 #B:015, t=065.54m, L=09.3082, ACC : S_TRN= 99.64%, T_TRN= 78.70%, S_TST= 83.94%, T_TST= 79.08%
+     E:215/300 #B:015, t=065.86m, L=09.3143, ACC : S_TRN= 99.58%, T_TRN= 80.99%, S_TST= 83.94%, T_TST= 79.06%
+     E:216/300 #B:015, t=066.20m, L=09.3259, ACC : S_TRN= 99.43%, T_TRN= 80.36%, S_TST= 83.91%, T_TST= 79.10%
+     E:217/300 #B:015, t=066.46m, L=09.3244, ACC : S_TRN= 99.79%, T_TRN= 79.22%, S_TST= 83.91%, T_TST= 79.08%
+     E:218/300 #B:015, t=066.75m, L=09.3117, ACC : S_TRN= 99.48%, T_TRN= 79.79%, S_TST= 83.97%, T_TST= 79.06%
+     E:219/300 #B:015, t=067.01m, L=09.3084, ACC : S_TRN= 99.74%, T_TRN= 79.38%, S_TST= 83.94%, T_TST= 79.06%
+     E:220/300 #B:015, t=067.28m, L=09.3176, ACC : S_TRN= 99.58%, T_TRN= 79.48%, S_TST= 83.94%, T_TST= 79.10%
+     E:221/300 #B:015, t=067.56m, L=09.3072, ACC : S_TRN= 99.64%, T_TRN= 78.85%, S_TST= 83.88%, T_TST= 79.08%
+     E:222/300 #B:015, t=067.79m, L=09.3210, ACC : S_TRN= 99.69%, T_TRN= 79.38%, S_TST= 83.94%, T_TST= 79.08%
+     E:223/300 #B:015, t=068.10m, L=09.3214, ACC : S_TRN= 99.79%, T_TRN= 78.85%, S_TST= 83.97%, T_TST= 79.06%
+     E:224/300 #B:015, t=068.40m, L=09.3088, ACC : S_TRN= 99.79%, T_TRN= 78.59%, S_TST= 83.97%, T_TST= 79.01%
+     E:225/300 #B:015, t=068.68m, L=09.3141, ACC : S_TRN= 99.74%, T_TRN= 80.00%, S_TST= 83.94%, T_TST= 78.97%
+     E:226/300 #B:015, t=068.94m, L=09.3036, ACC : S_TRN= 99.32%, T_TRN= 78.80%, S_TST= 83.94%, T_TST= 78.97%
+     E:227/300 #B:015, t=069.25m, L=09.3040, ACC : S_TRN= 99.79%, T_TRN= 78.91%, S_TST= 83.94%, T_TST= 79.01%
+     E:228/300 #B:015, t=069.52m, L=09.3142, ACC : S_TRN= 99.79%, T_TRN= 79.27%, S_TST= 83.91%, T_TST= 78.97%
+     E:229/300 #B:015, t=069.82m, L=09.3148, ACC : S_TRN= 99.48%, T_TRN= 78.96%, S_TST= 83.94%, T_TST= 79.04%
+     E:230/300 #B:015, t=070.06m, L=09.3154, ACC : S_TRN= 99.69%, T_TRN= 79.64%, S_TST= 83.94%, T_TST= 79.01%
+     E:231/300 #B:015, t=070.36m, L=09.3187, ACC : S_TRN= 99.48%, T_TRN= 79.48%, S_TST= 83.94%, T_TST= 79.06%
+     E:232/300 #B:015, t=070.59m, L=09.3098, ACC : S_TRN= 99.43%, T_TRN= 78.59%, S_TST= 83.91%, T_TST= 79.04%
+     E:233/300 #B:015, t=070.84m, L=09.3213, ACC : S_TRN= 99.48%, T_TRN= 79.01%, S_TST= 83.94%, T_TST= 79.06%
+     E:234/300 #B:015, t=071.16m, L=09.3314, ACC : S_TRN= 99.84%, T_TRN= 78.33%, S_TST= 83.91%, T_TST= 79.10%
+     E:235/300 #B:015, t=071.49m, L=09.3111, ACC : S_TRN= 99.64%, T_TRN= 78.75%, S_TST= 83.94%, T_TST= 79.06%
+     E:236/300 #B:015, t=071.74m, L=09.3077, ACC : S_TRN= 99.69%, T_TRN= 78.91%, S_TST= 83.91%, T_TST= 79.08%
+     E:237/300 #B:015, t=072.00m, L=09.3147, ACC : S_TRN= 99.64%, T_TRN= 79.58%, S_TST= 83.91%, T_TST= 79.08%
+     E:238/300 #B:015, t=072.26m, L=09.3242, ACC : S_TRN= 99.95%, T_TRN= 79.38%, S_TST= 83.91%, T_TST= 79.06%
+     E:239/300 #B:015, t=072.60m, L=09.3114, ACC : S_TRN= 99.58%, T_TRN= 81.20%, S_TST= 83.91%, T_TST= 79.10%
+     E:240/300 #B:015, t=072.96m, L=09.3084, ACC : S_TRN= 99.58%, T_TRN= 79.38%, S_TST= 83.91%, T_TST= 79.10%
+     E:241/300 #B:015, t=073.27m, L=09.3173, ACC : S_TRN= 99.74%, T_TRN= 80.62%, S_TST= 83.91%, T_TST= 79.13%
+     E:242/300 #B:015, t=073.60m, L=09.3303, ACC : S_TRN= 99.53%, T_TRN= 78.59%, S_TST= 83.85%, T_TST= 79.13%
+     E:243/300 #B:015, t=073.92m, L=09.3185, ACC : S_TRN= 99.58%, T_TRN= 79.58%, S_TST= 83.85%, T_TST= 79.10%
+     E:244/300 #B:015, t=074.23m, L=09.3152, ACC : S_TRN= 99.74%, T_TRN= 79.69%, S_TST= 83.88%, T_TST= 79.08%
+     E:245/300 #B:015, t=074.53m, L=09.3150, ACC : S_TRN= 99.64%, T_TRN= 78.80%, S_TST= 83.85%, T_TST= 79.10%
+     E:246/300 #B:015, t=074.83m, L=09.3117, ACC : S_TRN= 99.74%, T_TRN= 80.05%, S_TST= 83.88%, T_TST= 79.06%
+     E:247/300 #B:015, t=075.10m, L=09.3017, ACC : S_TRN= 99.64%, T_TRN= 77.71%, S_TST= 83.88%, T_TST= 79.08%
+     E:248/300 #B:015, t=075.35m, L=09.3258, ACC : S_TRN= 99.79%, T_TRN= 79.69%, S_TST= 83.91%, T_TST= 79.10%
+     E:249/300 #B:015, t=075.63m, L=09.3118, ACC : S_TRN= 99.69%, T_TRN= 79.64%, S_TST= 83.91%, T_TST= 79.10%
+     E:250/300 #B:015, t=075.95m, L=09.3273, ACC : S_TRN= 99.79%, T_TRN= 78.91%, S_TST= 83.91%, T_TST= 79.08%
+     E:251/300 #B:015, t=076.28m, L=09.3042, ACC : S_TRN= 99.53%, T_TRN= 79.01%, S_TST= 83.88%, T_TST= 79.06%
+     E:252/300 #B:015, t=076.56m, L=09.3070, ACC : S_TRN= 99.53%, T_TRN= 79.43%, S_TST= 83.91%, T_TST= 79.13%
+     E:253/300 #B:015, t=076.85m, L=09.3245, ACC : S_TRN= 99.64%, T_TRN= 78.28%, S_TST= 83.91%, T_TST= 79.08%
+     E:254/300 #B:015, t=077.09m, L=09.3112, ACC : S_TRN= 99.43%, T_TRN= 78.39%, S_TST= 83.91%, T_TST= 79.10%
+     E:255/300 #B:015, t=077.43m, L=09.3146, ACC : S_TRN= 99.90%, T_TRN= 81.20%, S_TST= 83.94%, T_TST= 79.04%
+     E:256/300 #B:015, t=077.71m, L=09.3132, ACC : S_TRN= 99.64%, T_TRN= 79.84%, S_TST= 83.94%, T_TST= 79.01%
+     E:257/300 #B:015, t=077.97m, L=09.2990, ACC : S_TRN= 99.58%, T_TRN= 79.17%, S_TST= 83.94%, T_TST= 79.04%
+     E:258/300 #B:015, t=078.27m, L=09.3033, ACC : S_TRN= 99.69%, T_TRN= 78.91%, S_TST= 83.94%, T_TST= 79.08%
+     E:259/300 #B:015, t=078.57m, L=09.2997, ACC : S_TRN= 99.69%, T_TRN= 78.91%, S_TST= 83.91%, T_TST= 79.10%
+     E:260/300 #B:015, t=078.84m, L=09.3054, ACC : S_TRN= 99.53%, T_TRN= 78.59%, S_TST= 83.91%, T_TST= 79.10%
+     E:261/300 #B:015, t=079.15m, L=09.3081, ACC : S_TRN= 99.53%, T_TRN= 79.48%, S_TST= 83.91%, T_TST= 79.10%
+     E:262/300 #B:015, t=079.44m, L=09.3133, ACC : S_TRN= 99.58%, T_TRN= 77.76%, S_TST= 83.94%, T_TST= 79.10%
+     E:263/300 #B:015, t=079.73m, L=09.3256, ACC : S_TRN= 99.64%, T_TRN= 80.21%, S_TST= 83.94%, T_TST= 79.10%
+     E:264/300 #B:015, t=080.07m, L=09.3142, ACC : S_TRN= 99.53%, T_TRN= 80.47%, S_TST= 83.91%, T_TST= 79.10%
+     E:265/300 #B:015, t=080.35m, L=09.3136, ACC : S_TRN= 99.74%, T_TRN= 78.59%, S_TST= 83.94%, T_TST= 79.10%
+     E:266/300 #B:015, t=080.68m, L=09.3085, ACC : S_TRN= 99.74%, T_TRN= 80.21%, S_TST= 83.94%, T_TST= 79.10%
+     E:267/300 #B:015, t=080.97m, L=09.3248, ACC : S_TRN= 99.53%, T_TRN= 78.54%, S_TST= 83.94%, T_TST= 79.10%
+     E:268/300 #B:015, t=081.27m, L=09.3174, ACC : S_TRN= 99.84%, T_TRN= 80.05%, S_TST= 83.94%, T_TST= 79.10%
+     E:269/300 #B:015, t=081.54m, L=09.3124, ACC : S_TRN= 99.43%, T_TRN= 78.96%, S_TST= 83.94%, T_TST= 79.10%
+     E:270/300 #B:015, t=081.84m, L=09.3009, ACC : S_TRN= 99.79%, T_TRN= 78.65%, S_TST= 83.94%, T_TST= 79.10%
+     E:271/300 #B:015, t=082.16m, L=09.3107, ACC : S_TRN= 99.48%, T_TRN= 77.24%, S_TST= 83.97%, T_TST= 79.10%
+     E:272/300 #B:015, t=082.48m, L=09.3055, ACC : S_TRN= 99.64%, T_TRN= 78.12%, S_TST= 83.97%, T_TST= 79.13%
+     E:273/300 #B:015, t=082.81m, L=09.3118, ACC : S_TRN= 99.90%, T_TRN= 78.18%, S_TST= 83.97%, T_TST= 79.10%
+     E:274/300 #B:015, t=083.15m, L=09.3082, ACC : S_TRN= 99.32%, T_TRN= 78.70%, S_TST= 83.94%, T_TST= 79.13%
+     E:275/300 #B:015, t=083.46m, L=09.3206, ACC : S_TRN= 99.43%, T_TRN= 80.31%, S_TST= 83.91%, T_TST= 79.10%
+     E:276/300 #B:015, t=083.71m, L=09.3064, ACC : S_TRN= 99.53%, T_TRN= 78.49%, S_TST= 83.94%, T_TST= 79.10%
+     E:277/300 #B:015, t=084.02m, L=09.3158, ACC : S_TRN= 99.58%, T_TRN= 79.90%, S_TST= 83.94%, T_TST= 79.10%
+     E:278/300 #B:015, t=084.31m, L=09.3282, ACC : S_TRN= 99.53%, T_TRN= 79.84%, S_TST= 83.94%, T_TST= 79.10%
+     E:279/300 #B:015, t=084.62m, L=09.3120, ACC : S_TRN= 99.74%, T_TRN= 79.38%, S_TST= 83.94%, T_TST= 79.10%
+     E:280/300 #B:015, t=084.92m, L=09.3071, ACC : S_TRN= 99.74%, T_TRN= 77.81%, S_TST= 83.94%, T_TST= 79.10%
+     E:281/300 #B:015, t=085.21m, L=09.2993, ACC : S_TRN= 99.58%, T_TRN= 80.26%, S_TST= 83.97%, T_TST= 79.10%
+     E:282/300 #B:015, t=085.53m, L=09.3008, ACC : S_TRN= 99.69%, T_TRN= 79.38%, S_TST= 83.97%, T_TST= 79.08%
+     E:283/300 #B:015, t=085.86m, L=09.2946, ACC : S_TRN= 99.58%, T_TRN= 78.54%, S_TST= 83.97%, T_TST= 79.10%
+     E:284/300 #B:015, t=086.12m, L=09.3139, ACC : S_TRN= 99.64%, T_TRN= 80.10%, S_TST= 83.97%, T_TST= 79.10%
+     E:285/300 #B:015, t=086.46m, L=09.3083, ACC : S_TRN= 99.79%, T_TRN= 80.31%, S_TST= 83.97%, T_TST= 79.10%
+     E:286/300 #B:015, t=086.80m, L=09.3237, ACC : S_TRN= 99.48%, T_TRN= 78.75%, S_TST= 83.97%, T_TST= 79.10%
+     E:287/300 #B:015, t=087.10m, L=09.3021, ACC : S_TRN= 99.32%, T_TRN= 78.54%, S_TST= 83.97%, T_TST= 79.13%
+     E:288/300 #B:015, t=087.39m, L=09.3118, ACC : S_TRN= 99.69%, T_TRN= 80.83%, S_TST= 83.97%, T_TST= 79.08%
+     E:289/300 #B:015, t=087.70m, L=09.3168, ACC : S_TRN= 99.69%, T_TRN= 79.64%, S_TST= 83.97%, T_TST= 79.13%
+     E:290/300 #B:015, t=088.04m, L=09.3322, ACC : S_TRN= 99.58%, T_TRN= 79.69%, S_TST= 83.94%, T_TST= 79.13%
+     E:291/300 #B:015, t=088.35m, L=09.3158, ACC : S_TRN= 99.84%, T_TRN= 79.90%, S_TST= 83.94%, T_TST= 79.13%
+     E:292/300 #B:015, t=088.65m, L=09.3042, ACC : S_TRN= 99.43%, T_TRN= 80.94%, S_TST= 83.94%, T_TST= 79.13%
+     E:293/300 #B:015, t=088.96m, L=09.3119, ACC : S_TRN= 99.53%, T_TRN= 80.05%, S_TST= 83.94%, T_TST= 79.13%
+     E:294/300 #B:015, t=089.27m, L=09.3110, ACC : S_TRN= 99.74%, T_TRN= 79.17%, S_TST= 83.94%, T_TST= 79.13%
+     E:295/300 #B:015, t=089.56m, L=09.3039, ACC : S_TRN= 99.58%, T_TRN= 78.59%, S_TST= 83.91%, T_TST= 79.13%
+     E:296/300 #B:015, t=089.85m, L=09.3147, ACC : S_TRN= 99.74%, T_TRN= 78.85%, S_TST= 83.91%, T_TST= 79.13%
+     E:297/300 #B:015, t=090.17m, L=09.2864, ACC : S_TRN= 99.69%, T_TRN= 78.80%, S_TST= 83.94%, T_TST= 79.13%
+     E:298/300 #B:015, t=090.45m, L=09.3020, ACC : S_TRN= 99.69%, T_TRN= 78.44%, S_TST= 83.97%, T_TST= 79.13%
+     E:299/300 #B:015, t=090.78m, L=09.2959, ACC : S_TRN= 99.53%, T_TRN= 78.65%, S_TST= 83.97%, T_TST= 79.10%
