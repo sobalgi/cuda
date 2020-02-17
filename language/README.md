@@ -69,4 +69,18 @@ The processed data of Amazon CUstomer Reviews dataset is obtained from <a href="
    
 - The t-SNE plots indicates inclined line-like clustering in both Source (x) and Target (+) domain with each class at either ends.
 
-## Code and instructions coming soon!!!
+## Code and instructions
+- `SB_lang_00_ss.py` : Code for source supervised only setting
+- `SB_lang_00_ss_tu.py` : Code for source supervised + target unsupervised only setting
+- `SB_lang_00_ss_tu_su.py` : Code for source supervised + target unsupervised + source unsupervised setting
+- `SB_lang_00_ss_tu_su_sa.py` : Code for source supervised + target unsupervised + source unsupervised + source adversarial setting
+- `SB_lang_00_ss_tu_su_ta.py` : Code for source supervised + target unsupervised + source unsupervised + target adversarial setting
+- `SB_lang_00_ss_tu_su_ta_sa.py` : Code for source supervised + target unsupervised + source unsupervised + target adversarial + source adversarial setting
+
+`cuda.sh` : this file consists of commands to run the experiments simultaneously in batch on multiple GPUs.
+
+### Folder Information
+- `data` : This folder is where the datasets are stored.
+- `datasets` : This folder consists of all the pytorch dataset files used for dataloading.
+- `logs` : This folder consists of logs from the previous simulations whose results are reported in the paper. The logs are created to store all the settings and parameters for reproducibility.
+- `model` : This folder consists of all the variants of neural networks used in MAN and CMD.
