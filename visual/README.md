@@ -157,4 +157,18 @@ Following images are illustrations from traffic sign domains with one example fr
 - The t-SNE plots clearly indicates the distantly separated classes in both Source (x) and Target (+) domain.
 - Also the morphing of Source (x) and Target (+) domain datapoints in the t-SNE plots indicate the success of CUDA in domain adaptation  
 
-## Code and instructions coming soon!!!
+## Code and instructions
+- `SB_main_00_ss.py` : Code for source supervised only setting
+- `SB_main_00_ss_tu.py` : Code for source supervised + target unsupervised only setting
+- `SB_main_00_ss_tu_su.py` : Code for source supervised + target unsupervised + source unsupervised setting
+- `SB_main_00_ss_tu_su_sa.py` : Code for source supervised + target unsupervised + source unsupervised + source adversarial setting
+- `SB_main_00_ss_tu_su_ta.py` : Code for source supervised + target unsupervised + source unsupervised + target adversarial setting
+- `SB_main_00_ss_tu_su_ta_sa.py` : Code for source supervised + target unsupervised + source unsupervised + target adversarial + source adversarial setting
+
+`plot_all_datasets.py` : Code for plotting the samples from the visual datasets.
+
+### Folder Information
+- `data` : This folder is where the datasets are stored. The links to download datasets are present in the same folder.
+- `datasets` : This folder consists of all the pytorch dataset files used for dataloading.
+- `logs` : This folder consists of logs from the previous simulations whose results are reported in the paper. The logs are created to store all the settings and parameters for reproducibility.
+- `model` : This folder consists of all the variants of neural networks used in SE, DIRT, MCD chosen for their respective visual domain adaptation tasks.
